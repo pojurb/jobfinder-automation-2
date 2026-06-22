@@ -1,0 +1,17 @@
+---
+title: "Product Manager"
+company: "Sotheby&#x27;s"
+match_score: 19
+status: "Ready to Apply"
+url: "https://news.ycombinator.com/item?id=22675967"
+date_added: "2026-06-22"
+source: "Hacker News"
+location: "Onsite&#x2F;Remote"
+work_type: "Remote"
+---
+### HN Who is Hiring
+- Sotheby&#x27;s (the first international auction house) is hiring senior full-stack engineers (plus many other data&#x2F;cloud architect positions) for the data and machine learning teams. Looking for candidates who want to work closely with product managers, engineers, designers, and stakeholders across the company.
+- 5+ years of experience in full-stack web development building scalable and responsive web-based applications
+- Experience with one or more general purpose programming languages including but not limited to: Python, Ruby, JavaScript, Java, or Go.
+- Check out full list of opportunities here:
+- https:&#x2F;&#x2F;careers-sothebys.icims.com&#x2F;jobs&#x2F;search?ss=1 searchLo...

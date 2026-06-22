@@ -1,0 +1,18 @@
+---
+title: "Product Manager"
+company: "Kolonial.no &#x2F; Senior Software Engineers &#x2F; Fulltime"
+match_score: 15
+status: "Ready to Apply"
+url: "https://news.ycombinator.com/item?id=22728441"
+date_added: "2026-06-22"
+source: "Hacker News"
+location: "Unknown"
+work_type: "Unknown"
+---
+### HN Who is Hiring
+- Kolonial.no a Norwegian scale-up that has been building tech and logistics since 2013 - to challenge the ways we do grocery shopping.
+- Building everything from end-user product experiences to logistics and distribution.
+- We are hiring for software engineers who will be a part of our visionary Product   Tech team organised in cross-functional product teams with software engineers, designers, product managers and data scientists.
+- For more check out:
+- https:&#x2F;&#x2F;careers.kolonial.no&#x2F;jobs&#x2F;
+- Stack: Python, Django, React, GCP and more.

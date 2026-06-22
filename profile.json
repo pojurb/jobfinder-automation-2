@@ -1,0 +1,89 @@
+{
+    "name": "Johannes Purba",
+    "target_roles": ["Product Manager", "Senior Product Manager", "Product Owner", "Head of Product"],
+    "categories": [
+        {
+            "name": "Role Match",
+            "weight": 3,
+            "keywords": [
+                "product manager", "product owner", "senior product manager",
+                "head of product", "vp product", "director of product",
+                "product lead", "product management", "group product manager",
+                "principal product manager", "associate product manager"
+            ]
+        },
+        {
+            "name": "Domain Match",
+            "weight": 2,
+            "keywords": [
+                "insurtech", "logistics", "mobility", "saas", "b2b",
+                "fintech", "ai", "infrastructure", "platform", "marketplace",
+                "digital products", "startup", "enterprise", "travel",
+                "insurance", "ticketing", "e-commerce"
+            ]
+        },
+        {
+            "name": "Hard Skills",
+            "weight": 2,
+            "keywords": [
+                "agile", "scrum", "roadmap", "prd", "go-to-market",
+                "product strategy", "data-driven", "product discovery",
+                "user research", "a/b testing", "okr", "kpi",
+                "product-market fit", "mvp", "sprint", "backlog",
+                "requirements", "specifications", "product lifecycle",
+                "customer journey", "user experience", "onboarding",
+                "retention", "product vision"
+            ]
+        },
+        {
+            "name": "Tools",
+            "weight": 1.5,
+            "keywords": [
+                "jira", "confluence", "metabase", "figma", "asana",
+                "notion", "miro", "analytics", "sql", "amplitude",
+                "mixpanel", "tableau", "looker", "google analytics"
+            ]
+        },
+        {
+            "name": "AI & Tech Skills",
+            "weight": 2.5,
+            "keywords": [
+                "ai", "llm", "prompt engineering", "machine learning",
+                "gpt", "gemini", "claude", "chatgpt", "artificial intelligence",
+                "rag", "vector database", "nlp", "deep learning",
+                "computer vision", "automation", "generative ai",
+                "ai-powered", "ai product", "ai infrastructure"
+            ]
+        },
+        {
+            "name": "Soft Skills",
+            "weight": 1,
+            "keywords": [
+                "cross-functional", "remote", "stakeholder", "collaboration",
+                "leadership", "communication", "team management",
+                "mentoring", "strategic", "problem-solving",
+                "autonomous", "self-starter"
+            ]
+        },
+        {
+            "name": "Location Preference",
+            "weight": 1.5,
+            "keywords": [
+                "remote", "indonesia", "jakarta", "hybrid",
+                "work from home", "distributed", "anywhere",
+                "southeast asia", "apac", "asia pacific",
+                "global", "worldwide"
+            ]
+        },
+        {
+            "name": "Business Impact",
+            "weight": 1.5,
+            "keywords": [
+                "revenue", "growth", "retention", "acquisition",
+                "conversion", "gmv", "arr", "mrr", "engagement",
+                "monetization", "scale", "enterprise", "b2b saas",
+                "roi", "market expansion", "go-to-market"
+            ]
+        }
+    ]
+}
