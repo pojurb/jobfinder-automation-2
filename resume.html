@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Johannes Purba Resume</title>
+  <style>
+    @page {
+      size: Letter;
+      margin: 0.36in;
+    }
+
+    :root {
+      --ink: #2e3443;
+      --muted: #667085;
+      --accent: #4361ee;
+      --rule: #cfd6e6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      width: 8.5in;
+      margin: 0 auto;
+      padding: 0.36in;
+      font-size: 10.5px;
+      line-height: 1.24;
+    }
+
+    h1, h2, h3, p, ul {
+      margin: 0;
+    }
+
+    .name {
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 10px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .sep {
+      color: #8b93a7;
+    }
+
+    section {
+      margin-top: 8px;
+    }
+
+    .section-title {
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      padding-top: 4px;
+      margin-bottom: 6px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      column-gap: 12px;
+      row-gap: 5px;
+      align-items: start;
+      margin-bottom: 2px;
+    }
+
+    .skill-label {
+      font-weight: 700;
+    }
+
+    .about {
+      border-left: 2px solid var(--accent);
+      padding-left: 10px;
+      color: #525b6c;
+      font-style: italic;
+      font-size: 10.2px;
+      line-height: 1.6;
+    }
+
+    .job {
+      margin-bottom: 8px;
+    }
+
+    .job-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 12px;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .job-title {
+      font-size: 10.8px;
+      font-weight: 700;
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 500;
+      margin-left: 4px;
+    }
+
+    .dates {
+      color: #98a2b3;
+      font-size: 9.8px;
+      white-space: nowrap;
+    }
+
+    .bullets {
+      padding-left: 14px;
+      margin-top: 2px;
+    }
+
+    .bullets li {
+      margin-bottom: 3px;
+      padding-left: 1px;
+    }
+
+    .bullets li::marker {
+      color: #4b5565;
+      font-size: 0.9em;
+    }
+
+    .edu-title {
+      font-size: 10.8px;
+      font-weight: 700;
+    }
+
+    .edu-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      column-gap: 12px;
+      align-items: baseline;
+      margin-bottom: 1px;
+    }
+
+    .school {
+      color: var(--accent);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="name">Johannes Purba</div>
+    <div class="contact">
+      <span>081287454446</span>
+      <span class="sep">•</span>
+      <a href="mailto:jopurb@gmail.com">jopurb@gmail.com</a>
+      <span class="sep">•</span>
+      <a href="https://linkedin.com/in/johannes-p-1000736b">linkedin.com/in/johannes-p-1000736b</a>
+      <span class="sep">•</span>
+      <a href="https://github.com/pojurb">github.com/pojurb</a>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-label">Product Management</div>
+      <div>Agile Methodologies, Scrum Practices, Product Vision &amp; Strategy, Roadmap Development, Remote Team Management, Cross-Functional Collaboration</div>
+
+      <div class="skill-label">Tools</div>
+      <div>Jira, Confluence, Metabase, Figma, Asana</div>
+
+      <div class="skill-label">AI &amp; Workflows</div>
+      <div>Advanced Prompt Engineering, AI-Augmented PM Workflows, LLMs (Gemini, Claude, ChatGPT)</div>
+
+      <div class="skill-label">Languages</div>
+      <div>English (Professional), Bahasa Indonesia (Native)</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">About</div>
+    <div class="about">
+      Product Manager with 10+ years of experience building and scaling digital products across insurtech, logistics, mobility, and B2B SaaS. Proven track record of delivering measurable business outcomes - from growing GMV 10x to directly contributing to 32% ARR. Combines deep technical grounding with an AI-augmented approach to product development, leveraging large language models to accelerate documentation, discovery, and strategic planning. Thrives in remote, cross-functional environments and is passionate about creating products that are both user-centric and business-driven.
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Product Manager <span class="company">• ASTRNT, Jakarta</span></div>
+        <div class="dates">July 2022 - Present</div>
+      </div>
+      <ul class="bullets">
+        <li>Delivered critical onboarding features for enterprise accounts, directly contributing to <strong>32% of Annual Recurring Revenue (ARR)</strong>.</li>
+        <li>Spearheaded strategic growth initiatives to accelerate sales, driving a <strong>15% increase in Sales Qualified Leads (SQLs)</strong>.</li>
+        <li>Maintained a strong customer retention rate of <strong>70%</strong> through product reliability and UX improvements.</li>
+        <li>Accelerated product delivery cycles by integrating proactive AI agent workflows to rapidly draft technical PRDs, architecture use-cases (e.g., Auth &amp; Session Management), and Go-To-Market playbooks, reducing documentation turnaround time by <strong>30%</strong>.</li>
+        <li>Defined and executed product roadmaps, consistently achieving <strong>80% delivery on quarterly goals</strong>.</li>
+        <li>Led Agile and Scrum practices, ensuring on-time, high-quality deliverables in a remote environment.</li>
+        <li>Collaborated cross-functional with engineering, design, and marketing teams to optimize customer journeys and drive engagement.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Product Manager <span class="company">• Qoala, Jakarta</span></div>
+        <div class="dates">November 2018 - November 2020</div>
+      </div>
+      <ul class="bullets">
+        <li>Led the integration of advanced AI models to automate core processes, such as <strong>instant travel insurance claims</strong> and <strong>computer-vision damage assessment</strong> for car and phone insurance, reducing manual review times and improving user experience.</li>
+        <li>Spearheaded data-driven product strategies, increasing <strong>GMV by 10x</strong>.</li>
+        <li>Launched the first international product with a major Bus Ticketing Startup, boosting <strong>transaction volume by 17x</strong> and market presence.</li>
+        <li>Led development for high-volume solutions contributing to 80% of policy issuance transactions, scaling monthly volume from <strong>60,000 to 1.5 million (17x-25x)</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Product Manager <span class="company">• XWORK, Jakarta</span></div>
+        <div class="dates">September 2017 - November 2018</div>
+      </div>
+      <ul class="bullets">
+        <li>Led market research and customer analysis to uncover new opportunities, driving product-market fit.</li>
+        <li>Streamlined product marketing strategies to align with technical development, enhancing performance.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Product Manager <span class="company">• Porter, Jakarta</span></div>
+        <div class="dates">November 2016 - September 2017</div>
+      </div>
+      <ul class="bullets">
+        <li>Collaborated cross-functional teams to deliver high-quality products on schedule, aligning roadmap priorities with strategic objectives.</li>
+        <li>Facilitated stakeholder communication to ensure priorities addressed user needs and business goals.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Product Management &amp; Sales Operations Coordinator <span class="company">• PegiPegi.com, Jakarta</span></div>
+        <div class="dates">July 2012 - January 2016</div>
+      </div>
+      <ul class="bullets">
+        <li>Optimized CRM processes to enhance contract renewals and streamline sales operations.</li>
+        <li>Resolved complex operational issues, increasing system efficiency and user satisfaction.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">Education</div>
+    <div class="edu-row">
+      <div class="edu-title">Bachelor of Computer Science</div>
+      <div class="dates">August 2008 - August 2012</div>
+    </div>
+    <div class="school">KALBIS Institute, Jakarta</div>
+  </section>
+</body>
+</html>
