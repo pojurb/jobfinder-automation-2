@@ -18,10 +18,33 @@ import random
 import subprocess
 import sys
 import argparse
+from html import unescape
 from html.parser import HTMLParser
 from datetime import datetime
 
 JOBS_DIR = "jobs"
+
+PM_KEYWORDS = [
+    "product manager",
+    "product owner",
+    "product lead",
+    "head of product",
+    "director of product",
+    "director product",
+    "vp of product",
+    "vp product",
+    "senior product manager",
+    "group product manager",
+]
+
+SOURCE_LABELS = {
+    "linkedin",
+    "glassdoor",
+    "indeed",
+    "jobstreet",
+    "remoteok",
+    "duckduckgo",
+}
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
@@ -72,15 +95,182 @@ def sanitize_filename(text):
     return text[:60]
 
 
+def normalize_whitespace(text):
+    """Collapse repeated whitespace and trim."""
+    return re.sub(r"\s+", " ", (text or "")).strip()
+
+
+def fetch_full_jd(url, source_name):
+    """Fetch the full job description text from a job URL."""
+    if not url or not url.startswith("http"):
+        return None
+        
+    print(f"      [JD Fetch] Fetching full JD from {source_name}...")
+    html_content = make_request(url, timeout=10)
+    if not html_content:
+        return None
+        
+    try:
+        if source_name == "LinkedIn":
+            m = re.search(r'show-more-less-html__markup[^>]*>(.*?)</div>', html_content, re.DOTALL)
+            if m:
+                content = m.group(1)
+                clean = re.sub(r'<[^>]+>', '\n', content)
+                return unescape(re.sub(r'\n+', '\n', clean).strip())
+                
+        elif source_name == "JobStreet":
+            m = re.search(r'data-automation="jobDescription"[^>]*>(.*?)</section>', html_content, re.DOTALL)
+            if not m:
+                m = re.search(r'data-automation="jobDescription"[^>]*>(.*?)</div>', html_content, re.DOTALL)
+            if m:
+                content = m.group(1)
+                clean = re.sub(r'<[^>]+>', '\n', content)
+                return unescape(re.sub(r'\n+', '\n', clean).strip())
+                
+        # Generic fallback for duckduckgo links or others
+        m = re.search(r'<article[^>]*>(.*?)</article>', html_content, re.DOTALL | re.IGNORECASE)
+        if not m:
+            m = re.search(r'<main[^>]*>(.*?)</main>', html_content, re.DOTALL | re.IGNORECASE)
+        if not m:
+            m = re.search(r'<body[^>]*>(.*?)</body>', html_content, re.DOTALL | re.IGNORECASE)
+            
+        if m:
+            content = m.group(1)
+            # Remove scripts, styles, navs before stripping tags
+            content = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL | re.IGNORECASE)
+            content = re.sub(r'<style[^>]*>.*?</style>', '', content, flags=re.DOTALL | re.IGNORECASE)
+            content = re.sub(r'<nav[^>]*>.*?</nav>', '', content, flags=re.DOTALL | re.IGNORECASE)
+            content = re.sub(r'<header[^>]*>.*?</header>', '', content, flags=re.DOTALL | re.IGNORECASE)
+            content = re.sub(r'<footer[^>]*>.*?</footer>', '', content, flags=re.DOTALL | re.IGNORECASE)
+            clean = re.sub(r'<[^>]+>', '\n', content)
+            return unescape(re.sub(r'\s*\n\s*', '\n', clean).strip())
+    except Exception:
+        pass
+    return None
+
+
+def normalize_url(url):
+    """Drop query-string noise so the same posting is easier to dedupe."""
+    url = normalize_whitespace(url)
+    if not url:
+        return ""
+
+    parts = urllib.parse.urlsplit(url)
+    scheme = parts.scheme or "https"
+    netloc = parts.netloc.lower()
+    path = re.sub(r"/{2,}", "/", parts.path).rstrip("/")
+    return urllib.parse.urlunsplit((scheme, netloc, path, "", ""))
+
+
+def strip_html(text):
+    """Convert lightweight HTML to plain text."""
+    text = re.sub(r"<[^>]+>", " ", text or "")
+    text = unescape(text)
+    return normalize_whitespace(text)
+
+
+def normalize_title(title, fallback="Product Manager"):
+    """Standardize noisy titles from search results."""
+    cleaned = strip_html(title)
+    cleaned = re.sub(
+        r"\s*[-|:]\s*(LinkedIn|Glassdoor|Indeed|JobStreet|Jobstreet|RemoteOK)\b.*$",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = cleaned.strip(" -|:")
+    return cleaned or fallback
+
+
+def normalize_company(company, source_name=""):
+    """Remove site labels and normalize spacing."""
+    cleaned = strip_html(company)
+    cleaned = re.sub(
+        r"\b(LinkedIn|Glassdoor|Indeed|JobStreet|Jobstreet|RemoteOK|DuckDuckGo)\b",
+        "",
+        cleaned,
+        flags=re.IGNORECASE,
+    )
+    cleaned = cleaned.strip(" -|:,")
+    if cleaned:
+        return cleaned
+    return f"Unknown ({source_name})" if source_name else "Unknown"
+
+
+def infer_work_type(*texts):
+    """Infer remote/hybrid/on-site hints from any supplied text."""
+    haystack = " ".join(normalize_whitespace(text).lower() for text in texts if text)
+    if "hybrid" in haystack:
+        return "Hybrid"
+    if any(token in haystack for token in ("on-site", "on site", "onsite")):
+        return "On-site"
+    if any(token in haystack for token in ("remote", "work from home", "wfh")):
+        return "Remote"
+    return "See posting"
+
+
+def normalize_description(description):
+    """Keep markdown readable without runaway whitespace."""
+    cleaned = (description or "No description available.").replace("\r\n", "\n")
+    cleaned = re.sub(r"[ \t]+\n", "\n", cleaned)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip()
+
+
+def split_search_result_title(raw_title):
+    """Best-effort split for search result titles like 'Role - Company | Site'."""
+    segments = [
+        segment.strip()
+        for segment in re.split(r"\s+\|\s+|\s+-\s+|\s+:\s+", normalize_whitespace(unescape(raw_title)))
+        if segment.strip()
+    ]
+    segments = [segment for segment in segments if segment.lower() not in SOURCE_LABELS]
+
+    if not segments:
+        return "Product Manager", "Unknown"
+    if len(segments) == 1:
+        return normalize_title(segments[0]), "Unknown"
+    return normalize_title(segments[0]), normalize_company(segments[1])
+
+
+def normalize_job(job):
+    """Normalize scraped job records before deduping or writing."""
+    source = normalize_whitespace(job.get("source", "Unknown")) or "Unknown"
+    title = normalize_title(job.get("title", ""), "Product Manager")
+    company = normalize_company(job.get("company", ""), source)
+    location = normalize_whitespace(job.get("location", "")) or "See posting"
+    work_type = normalize_whitespace(job.get("work_type", ""))
+    if not work_type or work_type in {"Unknown", "See posting"}:
+        work_type = infer_work_type(location, job.get("description", ""))
+
+    raw_date = normalize_whitespace(job.get("date_added", ""))
+    try:
+        datetime.strptime(raw_date, "%Y-%m-%d")
+        date_added = raw_date
+    except ValueError:
+        date_added = datetime.now().strftime("%Y-%m-%d")
+
+    return {
+        "title": title,
+        "company": company,
+        "url": normalize_url(job.get("url", "")),
+        "date_added": date_added,
+        "source": source,
+        "location": location,
+        "work_type": work_type or "See posting",
+        "description": normalize_description(job.get("description", "")),
+    }
+
+
 def generate_job_id(title, company):
     """Generate a unique hash for deduplication."""
-    key = f"{title.lower().strip()}|{company.lower().strip()}"
+    key = f"{normalize_title(title).lower()}|{normalize_company(company).lower()}"
     return hashlib.md5(key.encode()).hexdigest()[:12]
 
 
-def get_existing_job_ids():
-    """Scan existing .md files and return set of job ID hashes."""
-    existing = set()
+def get_existing_job_state():
+    """Scan existing .md files and return dedupe fingerprints and URLs."""
+    existing = {"ids": set(), "urls": set()}
     if not os.path.exists(JOBS_DIR):
         os.makedirs(JOBS_DIR)
         return existing
@@ -94,23 +284,59 @@ def get_existing_job_ids():
                 content = fh.read(2000)  # Only need frontmatter
             title_m = re.search(r'^title:\s*"(.+?)"', content, re.MULTILINE)
             company_m = re.search(r'^company:\s*"(.+?)"', content, re.MULTILINE)
+            url_m = re.search(r'^url:\s*"(.+?)"', content, re.MULTILINE)
             if title_m and company_m:
-                existing.add(generate_job_id(title_m.group(1), company_m.group(1)))
+                existing["ids"].add(generate_job_id(title_m.group(1), company_m.group(1)))
+            if url_m:
+                normalized = normalize_url(url_m.group(1))
+                if normalized:
+                    existing["urls"].add(normalized)
         except Exception:
             pass
     return existing
 
 
-def save_job(job, existing_ids):
+def count_saved_jobs():
+    """Count markdown job files."""
+    if not os.path.exists(JOBS_DIR):
+        return 0
+    return sum(1 for fname in os.listdir(JOBS_DIR) if fname.endswith(".md"))
+
+
+def dedupe_jobs(jobs):
+    """Deduplicate normalized jobs inside a scrape batch."""
+    seen_ids = set()
+    seen_urls = set()
+    unique = []
+
+    for job in jobs:
+        normalized = normalize_job(job)
+        job_id = generate_job_id(normalized["title"], normalized["company"])
+        job_url = normalized["url"]
+        if job_id in seen_ids or (job_url and job_url in seen_urls):
+            continue
+        seen_ids.add(job_id)
+        if job_url:
+            seen_urls.add(job_url)
+        unique.append(normalized)
+
+    return unique
+
+
+def save_job(job, existing_state):
     """Save a job dict as a markdown file. Returns True if new job saved."""
+    job = normalize_job(job)
     title = job.get("title", "Unknown").replace('"', "'")
     company = job.get("company", "Unknown").replace('"', "'")
     job_id = generate_job_id(title, company)
+    job_url = job.get("url", "")
 
-    if job_id in existing_ids:
+    if job_id in existing_state["ids"] or (job_url and job_url in existing_state["urls"]):
         return False
 
-    existing_ids.add(job_id)
+    existing_state["ids"].add(job_id)
+    if job_url:
+        existing_state["urls"].add(job_url)
 
     date_added = job.get("date_added", datetime.now().strftime("%Y-%m-%d"))
     filename = f"{sanitize_filename(company)}_{sanitize_filename(title)}_{date_added}.md"
@@ -126,7 +352,14 @@ def save_job(job, existing_ids):
     location = job.get("location", "See posting").replace('"', "'")
     work_type = job.get("work_type", "See posting").replace('"', "'")
     source = job.get("source", "Unknown").replace('"', "'")
+    
     description = job.get("description", "No description available.")
+    
+    # Only fetch full JD if it's not Hacker News or RemoteOK (they already provide full desc)
+    if source not in ["Hacker News", "RemoteOK"]:
+        full_jd = fetch_full_jd(job.get("url", ""), source)
+        if full_jd:
+            description += f"\n\n### Full Job Description\n{full_jd}"
 
     content = f"""---
 title: "{title}"
@@ -171,23 +404,15 @@ def scrape_remoteok():
         if isinstance(listings, list) and len(listings) > 1:
             listings = listings[1:]
 
-        pm_keywords = [
-            "product manager", "product owner", "product lead",
-            "head of product", "director product", "vp product",
-        ]
-
         for item in listings:
             position = item.get("position", "").lower()
             tags = " ".join(item.get("tags", [])).lower()
             searchable = f"{position} {tags}"
 
-            if not any(kw in searchable for kw in pm_keywords):
+            if not any(kw in searchable for kw in PM_KEYWORDS):
                 continue
 
-            # Clean HTML tags from description
-            desc = item.get("description", "")
-            desc = re.sub(r"<[^>]+>", " ", desc)
-            desc = re.sub(r"\s+", " ", desc).strip()
+            desc = strip_html(item.get("description", ""))
 
             raw_date = item.get("date", "")[:10]
             try:
@@ -274,17 +499,11 @@ def scrape_hn_who_is_hiring():
             break
 
     # Step 3: Filter for PM-related comments
-    pm_keywords = [
-        "product manager", "product owner", "product lead",
-        "head of product", "director of product", "vp of product",
-        "senior product manager", "group product manager",
-    ]
-
     for comment in all_comments:
         raw_html = comment.get("comment_text", "") or ""
         text_lower = raw_html.lower()
 
-        if not any(kw in text_lower for kw in pm_keywords):
+        if not any(kw in text_lower for kw in PM_KEYWORDS):
             continue
 
         # Strip HTML tags
@@ -305,9 +524,9 @@ def scrape_hn_who_is_hiring():
 
         for part in parts:
             pl = part.lower()
-            for kw in pm_keywords:
+            for kw in PM_KEYWORDS:
                 if kw in pl:
-                    title = part.strip().title()
+                    title = normalize_title(part.strip(), "Product Manager")
                     break
             if any(loc in pl for loc in ["remote", "onsite", "hybrid"]):
                 location = part.strip()
@@ -324,7 +543,7 @@ def scrape_hn_who_is_hiring():
         url = url_match.group(0) if url_match else hn_item_url
 
         body_lines = lines[1:] if len(lines) > 1 else lines
-        body = "\n".join(f"- {l}" for l in body_lines[:20])
+        body = "\n".join(f"- {strip_html(l)}" for l in body_lines[:20])
 
         jobs.append({
             "title": title,
@@ -435,32 +654,20 @@ def _scrape_via_duckduckgo(site_domain, source_name, label_index):
                 continue
 
             raw_title = r.get("title", "")
-            # Parse "Title - Company | Site" format
-            parts = re.split(r"\s*[-–—|]\s*", raw_title)
-            title = parts[0].strip() if parts else "Product Manager"
-            company = "Unknown"
-            if len(parts) > 1:
-                company = parts[1].strip()
-                company = re.sub(
-                    r"\b(LinkedIn|Glassdoor|Indeed|JobStreet|Jobstreet|DuckDuckGo)\b",
-                    "", company, flags=re.IGNORECASE,
-                ).strip()
-            if not company or len(company) < 2:
+            title, company = split_search_result_title(raw_title)
+            if company == "Unknown":
                 company = f"Unknown ({source_name})"
 
             snippet = r.get("snippet", "")
-            loc = "See posting"
-            wt = "See posting"
+            loc = "Indonesia" if "jobstreet" in site_domain else "See posting"
             combined = (snippet + " " + raw_title).lower()
-            if "remote" in combined:
-                wt = "Remote"
+            wt = infer_work_type(combined)
+            if wt == "Remote":
                 loc = "Remote"
             if "indonesia" in combined:
                 loc = "Indonesia"
             if "jakarta" in combined:
                 loc = "Jakarta, Indonesia"
-            if "hybrid" in combined:
-                wt = "Hybrid"
 
             jobs.append({
                 "title": title[:120],
@@ -479,14 +686,7 @@ def _scrape_via_duckduckgo(site_domain, source_name, label_index):
 
         time.sleep(random.uniform(2, 3))
 
-    # Deduplicate within this source
-    seen = set()
-    unique = []
-    for j in jobs:
-        jid = generate_job_id(j["title"], j["company"])
-        if jid not in seen:
-            seen.add(jid)
-            unique.append(j)
+    unique = dedupe_jobs(jobs)
 
     print(f"    ✅ Found {len(unique)} PM jobs")
     return unique
@@ -591,9 +791,9 @@ def scrape_linkedin():
 
         for r in parser.jobs:
             loc = r.get("location", "See posting").strip()
-            wt = "Remote" if ("remote" in loc.lower() or "f_WT=2" in extra) else "See posting"
-            if "indonesia" in loc.lower() or "jakarta" in loc.lower():
-                wt = "Hybrid" if wt != "Remote" else wt
+            wt = infer_work_type(loc)
+            if wt == "See posting" and "f_WT=2" in extra:
+                wt = "Remote"
 
             job_url = r.get("url", "").strip()
             if job_url and not job_url.startswith("http"):
@@ -612,14 +812,7 @@ def scrape_linkedin():
 
         time.sleep(random.uniform(2, 4))
 
-    # Deduplicate
-    seen = set()
-    unique = []
-    for j in jobs:
-        jid = generate_job_id(j["title"], j["company"])
-        if jid not in seen:
-            seen.add(jid)
-            unique.append(j)
+    unique = dedupe_jobs(jobs)
 
     # If direct scraping found nothing, fallback to DuckDuckGo
     if not unique:
@@ -746,14 +939,7 @@ def scrape_jobstreet():
 
         time.sleep(random.uniform(1.5, 3))
 
-    # Deduplicate
-    seen = set()
-    unique = []
-    for j in jobs:
-        jid = generate_job_id(j["title"], j["company"])
-        if jid not in seen:
-            seen.add(jid)
-            unique.append(j)
+    unique = dedupe_jobs(jobs)
 
     # Fallback to DuckDuckGo if nothing found
     if not unique:
@@ -802,8 +988,11 @@ def main():
     if not os.path.exists(JOBS_DIR):
         os.makedirs(JOBS_DIR)
 
-    existing_ids = get_existing_job_ids()
-    print(f"\n  📂 Existing jobs in ./jobs/: {len(existing_ids)}")
+    existing_state = get_existing_job_state()
+    print(
+        f"\n  📂 Existing jobs in ./jobs/: {count_saved_jobs()} files "
+        f"({len(existing_state['ids'])} unique fingerprints)"
+    )
 
     total_scraped = 0
     total_new = 0
@@ -827,7 +1016,7 @@ def main():
                 found_jobs = scraper_fn()
                 new_count = 0
                 for job in found_jobs:
-                    if save_job(job, existing_ids):
+                    if save_job(job, existing_state):
                         new_count += 1
                 total_scraped += len(found_jobs)
                 total_new += new_count
@@ -844,7 +1033,7 @@ def main():
     print(f"  📊 Scraping Summary")
     print(f"     Found:     {total_scraped} jobs across all sources")
     print(f"     New saved:  {total_new} (after deduplication)")
-    print(f"     Total:     {len(get_existing_job_ids())} jobs in ./jobs/")
+    print(f"     Total:     {count_saved_jobs()} jobs in ./jobs/")
     print("─" * 60)
 
     # Auto-run scoring
