@@ -2,6 +2,7 @@
 title: "Senior Product Manager"
 company: "AbhiBus"
 match_score: 80
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 9, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["logistics", "mobility", "b2b", "ai", "platform"]}, {"category": "Hard Skills", "matched": 7, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "roadmap", "prd", "product strategy", "sprint"]}, {"category": "Tools", "matched": 5, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["figma", "analytics", "mixpanel", "tableau", "google analytics"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "ai-powered"]}, {"category": "Soft Skills", "matched": 6, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["arr", "enterprise"]}]'
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-at-abhibus-4433097426"
 date_added: "2026-06-26"

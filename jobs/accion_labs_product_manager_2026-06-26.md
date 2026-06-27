@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "Accion Labs"
 match_score: 75
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "product management"]}, {"category": "Domain Match", "matched": 6, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "platform", "marketplace", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["agile", "scrum", "data-driven"]}, {"category": "Tools", "matched": 2, "total": 14, "weight": 1.5, "pct": 67, "keywords_hit": ["figma", "analytics"]}, {"category": "AI & Tech Skills", "matched": 5, "total": 19, "weight": 2.5, "pct": 100, "keywords_hit": ["ai", "prompt engineering", "claude", "rag", "ai product"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "collaboration", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-at-accion-labs-4432276948"
 date_added: "2026-06-26"

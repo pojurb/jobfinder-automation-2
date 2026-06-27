@@ -15,6 +15,9 @@ import urllib.parse
 import urllib.error
 import ssl
 import random
+import sys
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 import subprocess
 import sys
 import argparse
@@ -976,6 +979,7 @@ def main():
     )
     ap.add_argument("--skip-ai", action="store_true", help="Skip AI scoring")
     ap.add_argument("--rescore", action="store_true", help="Only re-score existing jobs")
+    ap.add_argument("--refetch", action="store_true", help="Refetch full job descriptions for existing jobs with missing/short descriptions")
     args = ap.parse_args()
 
     print()
@@ -996,6 +1000,33 @@ def main():
 
     total_scraped = 0
     total_new = 0
+
+    if args.refetch:
+        print("\n  🔄 Refetching missing job descriptions...")
+        refetched = 0
+        for fname in os.listdir(JOBS_DIR):
+            if not fname.endswith(".md"): continue
+            filepath = os.path.join(JOBS_DIR, fname)
+            with open(filepath, "r", encoding="utf-8") as f:
+                content = f.read()
+            body = content.split("---", 2)[-1].strip()
+            if "Visit the link for full details" in body or "Visit the link for full job details" in body or len(body) < 150:
+                url_m = re.search(r'^url:\s*"(.+?)"', content, re.MULTILINE)
+                source_m = re.search(r'^source:\s*"(.+?)"', content, re.MULTILINE)
+                if url_m and source_m:
+                    url = url_m.group(1).replace("%22", '"')
+                    source = source_m.group(1)
+                    if source not in ["Hacker News", "RemoteOK"]:
+                        full_jd = fetch_full_jd(url, source)
+                        if full_jd:
+                            parts = content.split("---", 2)
+                            new_content = parts[0] + "---" + parts[1] + "---\n\n### Full Job Description\n" + full_jd + "\n"
+                            with open(filepath, "w", encoding="utf-8") as f:
+                                f.write(new_content)
+                            refetched += 1
+                            time.sleep(random.uniform(1, 2))
+        print(f"    ✅ Refetched {refetched} job descriptions")
+        return
 
     if not args.rescore:
         scrapers = {

@@ -2,6 +2,7 @@
 title: "Lead Product Manager, First-Party Data Platform"
 company: "Attentive"
 match_score: 23
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/lead-product-manager-first-party-data-platform-at-attentive-4380582187"
 date_added: "2026-06-26"

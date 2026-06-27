@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "Sotheby&#x27;s"
 match_score: 19
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["machine learning"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["remote", "stakeholder"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22675967"
 date_added: "2026-06-22"

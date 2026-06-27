@@ -2,6 +2,7 @@
 title: "Senior Product Manager"
 company: "Applause"
 match_score: 67
+score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "startup", "insurance"]}, {"category": "Hard Skills", "matched": 8, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "product strategy", "data-driven", "user research", "sprint"]}, {"category": "Tools", "matched": 2, "total": 14, "weight": 1.5, "pct": 67, "keywords_hit": ["jira", "analytics"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["retention"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/senior-product-manager-at-applause-4410863074"
 date_added: "2026-06-26"

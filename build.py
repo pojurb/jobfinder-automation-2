@@ -6,6 +6,9 @@ Uses only Python standard library.
 """
 
 import os
+import sys
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 import re
 import json
 from datetime import datetime
@@ -39,6 +42,11 @@ def parse_markdown(filepath):
                     value = int(value)
                 except ValueError:
                     value = 0
+            if key == "score_breakdown":
+                try:
+                    value = json.loads(value.replace("''", "'"))
+                except Exception:
+                    pass
             metadata[key] = value
 
     return {"metadata": metadata, "body": body}
@@ -52,7 +60,9 @@ def main():
     for filename in sorted(os.listdir(JOBS_DIR)):
         if filename.endswith(".md"):
             filepath = os.path.join(JOBS_DIR, filename)
-            jobs.append(parse_markdown(filepath))
+            job = parse_markdown(filepath)
+            job["id"] = filename.replace(".md", "")
+            jobs.append(job)
 
     jobs_json = json.dumps(jobs, ensure_ascii=False)
     build_ts = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -171,6 +181,7 @@ def main():
                     <option value="Applied">Applied</option>
                     <option value="Interviewing">Interviewing</option>
                     <option value="Archived">Archived</option>
+                    <option value="Junk">Junk</option>
                 </select>
                 <!-- Score filter -->
                 <select id="filter-score" class="bg-slate-900/60 border border-slate-700/30 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500/40 text-sm font-medium cursor-pointer">
@@ -259,10 +270,15 @@ def main():
                     </div>
 
                     <!-- CTA -->
-                    <a id="md-url" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl mb-6 transition-all shadow-lg shadow-blue-600/20">
-                        View Original Posting
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                    </a>
+                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                        <a id="md-url" href="#" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-blue-600/20">
+                            View Original Posting
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <button id="md-ai-prompt" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg">
+                            ✨ Copy AI Prompt
+                        </button>
+                    </div>
 
                     <!-- Notes -->
                     <div>
@@ -328,6 +344,37 @@ def main():
             return dateStr === TODAY;
         }}
 
+        function isStale(dateStr) {{
+            if (!dateStr) return false;
+            const diff = (new Date() - new Date(dateStr)) / (1000 * 60 * 60 * 24);
+            return diff > 30;
+        }}
+
+        function getStatus(jobId, defaultStatus) {{
+            return localStorage.getItem('job_status_' + jobId) || defaultStatus || 'Ready to Apply';
+        }}
+
+        function syncToServer() {{
+            const statuses = {{}};
+            for (let i = 0; i < localStorage.length; i++) {{
+                const key = localStorage.key(i);
+                if (key.startsWith('job_status_')) {{
+                    statuses[key.replace('job_status_', '')] = localStorage.getItem(key);
+                }}
+            }}
+            fetch('http://localhost:8989/sync', {{
+                method: 'POST',
+                body: JSON.stringify(statuses)
+            }}).catch(e => {{}}); // Ignore if sync server not running
+        }}
+
+        window._setStatus = function(jobId, status) {{
+            localStorage.setItem('job_status_' + jobId, status);
+            render();
+            updateMetrics();
+            syncToServer();
+        }};
+
         function mdToHtml(text) {{
             if (!text) return '<p class="text-slate-500 italic">No notes available.</p>';
             let h = text
@@ -338,11 +385,9 @@ def main():
                 .replace(/\\*(.+?)\\*/g, '<em>$1</em>')
                 .replace(/\\[([^\\]]+)\\]\\(([^)]+)\\)/g, '<a href="$2" target="_blank" class="text-blue-400 hover:underline">$1</a>')
                 .replace(/^- (.*)$/gm, '<li class="ml-4 list-disc mb-1 marker:text-blue-500/60">$1</li>');
-            // Wrap consecutive <li> in <ul>
             h = h.replace(/(<li[^>]*>.*?<\\/li>\\n?)+/g, function(m) {{
                 return '<ul class="mb-4 space-y-1">' + m + '</ul>';
             }});
-            // Wrap remaining plain text in <p>
             h = h.split('\\n\\n').map(function(p) {{
                 p = p.trim();
                 if (!p || p.startsWith('<h') || p.startsWith('<ul') || p.startsWith('<li')) return p;
@@ -355,7 +400,7 @@ def main():
         function updateMetrics() {{
             document.getElementById('m-total').textContent = DATA.length;
             document.getElementById('m-high').textContent = DATA.filter(j => (j.metadata.match_score || 0) >= 90).length;
-            document.getElementById('m-applied').textContent = DATA.filter(j => j.metadata.status === 'Applied').length;
+            document.getElementById('m-applied').textContent = DATA.filter(j => getStatus(j.id, j.metadata.status) === 'Applied').length;
             document.getElementById('m-new').textContent = DATA.filter(j => isNew(j.metadata.date_added)).length;
         }}
 
@@ -365,7 +410,15 @@ def main():
                 const m = j.metadata;
                 const q = searchQuery.toLowerCase();
                 const matchText = !q || (m.title||'').toLowerCase().includes(q) || (m.company||'').toLowerCase().includes(q);
-                const matchStatus = filterStatus === 'All' || m.status === filterStatus;
+                
+                const status = getStatus(j.id, m.status);
+                let matchStatus = false;
+                if (filterStatus === 'All') {{
+                    matchStatus = (status !== 'Junk');
+                }} else {{
+                    matchStatus = (status === filterStatus);
+                }}
+
                 const matchSource = filterSource === 'All' || m.source === filterSource;
                 
                 const scoreValue = m.match_score || 0;
@@ -397,18 +450,28 @@ def main():
                 const score = m.match_score || 0;
                 const sc = scoreColor(score);
                 const isNewJob = isNew(m.date_added);
+                const stale = isStale(m.date_added);
+                const status = getStatus(job.id, m.status);
                 const delay = Math.min(i * 40, 600);
                 const loc = m.location && m.location !== 'See posting' && m.location !== 'Unknown' ? m.location : '';
                 const wt = m.work_type && m.work_type !== 'See posting' && m.work_type !== 'Unknown' ? m.work_type : '';
 
-                return '<div class="card-shine animate-card bg-[#111827]/80 border border-slate-700/40 rounded-2xl p-5 hover:border-slate-500/60 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer flex flex-col h-full" style="animation-delay:' + delay + 'ms" onclick="window._openModal(' + i + ')">'
-                    + '<div class="flex justify-between items-start mb-4">'
+                return '<div class="card-shine animate-card bg-[#111827]/80 border border-slate-700/40 rounded-2xl p-5 hover:border-slate-500/60 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full" style="animation-delay:' + delay + 'ms">'
+                    + '<div class="flex justify-between items-start mb-4 cursor-pointer" onclick="window._openModal(' + i + ')">'
                     +   '<div class="flex items-center gap-2">'
                     +     '<span class="text-sm font-bold px-2.5 py-1 rounded-lg border ' + sc.join(' ') + '">' + score + '</span>'
                     +     (isNewJob ? '<span class="new-pulse text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">NEW</span>' : '')
+                    +     (stale ? '<span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-slate-500/10 text-slate-400 border border-slate-500/20">STALE</span>' : '')
                     +   '</div>'
-                    +   '<span class="text-[10px] font-semibold text-slate-400 px-2.5 py-1 bg-slate-800/60 rounded-lg border border-slate-700/40">' + (m.status || 'Unknown') + '</span>'
+                    +   '<select onclick="event.stopPropagation()" onchange="window._setStatus(\'' + job.id + '\', this.value)" class="text-[10px] font-semibold text-slate-300 px-2 py-1 bg-slate-800/80 rounded-lg border border-slate-600 outline-none cursor-pointer">'
+                    +     '<option value="Ready to Apply" ' + (status==='Ready to Apply'?'selected':'') + '>Ready to Apply</option>'
+                    +     '<option value="Applied" ' + (status==='Applied'?'selected':'') + '>Applied</option>'
+                    +     '<option value="Interviewing" ' + (status==='Interviewing'?'selected':'') + '>Interviewing</option>'
+                    +     '<option value="Archived" ' + (status==='Archived'?'selected':'') + '>Archived</option>'
+                    +     '<option value="Junk" ' + (status==='Junk'?'selected':'') + '>Junk</option>'
+                    +   '</select>'
                     + '</div>'
+                    + '<div class="cursor-pointer flex-1 flex flex-col" onclick="window._openModal(' + i + ')">'
                     + '<h3 class="text-sm font-bold text-white mb-1.5 line-clamp-2 leading-snug hover:text-blue-400 transition-colors">' + (m.title || 'Untitled') + '</h3>'
                     + '<p class="text-xs text-slate-400 font-medium mb-3">' + (m.company || 'Unknown') + '</p>'
                     + (loc || wt ? '<div class="flex flex-wrap gap-1.5 mb-3">' + (loc ? '<span class="text-[10px] text-slate-500 bg-slate-800/40 px-2 py-0.5 rounded-md">📍 ' + loc + '</span>' : '') + (wt ? '<span class="text-[10px] text-slate-500 bg-slate-800/40 px-2 py-0.5 rounded-md">' + wt + '</span>' : '') + '</div>' : '')
@@ -435,7 +498,7 @@ def main():
             scoreEl.textContent = score;
             scoreEl.className = 'font-bold text-xl ' + sc[1];
 
-            document.getElementById('md-status').textContent = m.status || 'N/A';
+            document.getElementById('md-status').textContent = getStatus(job.id, m.status);
             document.getElementById('md-location').textContent = m.location || 'N/A';
             document.getElementById('md-worktype').textContent = m.work_type || 'N/A';
             document.getElementById('md-date').textContent = m.date_added || 'N/A';
@@ -450,8 +513,27 @@ def main():
             const urlEl = document.getElementById('md-url');
             if (m.url) {{ urlEl.href = m.url; urlEl.style.display = 'flex'; }}
             else {{ urlEl.style.display = 'none'; }}
+            
+            const scoreBreakdown = m.score_breakdown || [];
+            let bdHtml = '';
+            if (scoreBreakdown.length > 0) {{
+                bdHtml = '<div class="mb-6 bg-slate-800/30 rounded-xl p-4 border border-slate-700/40"><h4 class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-3">Score Breakdown</h4><div class="space-y-3">';
+                scoreBreakdown.forEach(function(b) {{
+                    bdHtml += '<div class="flex items-center gap-3"><div class="w-32 text-xs text-slate-300 font-medium truncate" title="' + b.category + '">' + b.category + '</div><div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden"><div class="h-full bg-blue-500 rounded-full" style="width:' + b.pct + '%"></div></div><div class="w-10 text-xs text-right text-slate-400 font-bold">' + b.pct + '%</div></div>';
+                }});
+                bdHtml += '</div></div>';
+            }}
 
-            document.getElementById('md-body').innerHTML = mdToHtml(job.body);
+            document.getElementById('md-body').innerHTML = bdHtml + mdToHtml(job.body);
+            
+            const promptBtn = document.getElementById('md-ai-prompt');
+            promptBtn.onclick = function() {{
+                const prompt = "Write a cover letter for the position of " + (m.title||"") + " at " + (m.company||"") + ". Here is the job description:\n\n" + (job.body||"") + "\n\nPlease base it on my attached resume.";
+                navigator.clipboard.writeText(prompt);
+                const originalHtml = promptBtn.innerHTML;
+                promptBtn.innerHTML = '✅ Copied!';
+                setTimeout(() => promptBtn.innerHTML = originalHtml, 2000);
+            }};
 
             overlay.classList.remove('hidden');
             void overlay.offsetWidth;

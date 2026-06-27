@@ -2,6 +2,7 @@
 title: "Product Tunaiku Circle Lead"
 company: "Amar Bank"
 match_score: 62
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product lead"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["product strategy", "okr", "requirements"]}, {"category": "Tools", "matched": 4, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "analytics", "mixpanel", "looker"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "artificial intelligence"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "collaboration", "leadership", "strategic"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "hybrid"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-tunaiku-circle-lead-at-amar-bank-4318126487"
 date_added: "2026-06-22"

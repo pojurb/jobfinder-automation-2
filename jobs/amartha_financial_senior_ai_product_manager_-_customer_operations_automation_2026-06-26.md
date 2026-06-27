@@ -2,6 +2,7 @@
 title: "Senior AI Product Manager - Customer Operations & Automation"
 company: "Amartha Financial"
 match_score: 76
+score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 6, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "infrastructure", "platform", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "product strategy", "requirements"]}, {"category": "AI & Tech Skills", "matched": 6, "total": 19, "weight": 2.5, "pct": 100, "keywords_hit": ["ai", "llm", "automation", "generative ai", "ai-powered"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/senior-ai-product-manager-customer-operations-automation-at-amartha-financial-4432205267"
 date_added: "2026-06-26"

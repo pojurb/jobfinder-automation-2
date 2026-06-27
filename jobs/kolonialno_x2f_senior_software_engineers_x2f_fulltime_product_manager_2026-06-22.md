@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "Kolonial.no &#x2F; Senior Software Engineers &#x2F; Fulltime"
 match_score: 15
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["logistics"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["cross-functional"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["scale"]}]'
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22728441"
 date_added: "2026-06-22"

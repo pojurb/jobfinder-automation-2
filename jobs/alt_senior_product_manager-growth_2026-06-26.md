@@ -2,6 +2,7 @@
 title: "Senior Product Manager-Growth"
 company: "Alt"
 match_score: 82
+score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "infrastructure", "platform", "marketplace"]}, {"category": "Hard Skills", "matched": 4, "total": 24, "weight": 2, "pct": 80, "keywords_hit": ["roadmap", "kpi", "onboarding", "retention"]}, {"category": "Tools", "matched": 3, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["sql", "amplitude", "mixpanel"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "leadership", "strategic"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 5, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["growth", "retention", "conversion", "gmv", "scale"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/senior-product-manager-growth-at-alt-4378657397"
 date_added: "2026-06-26"

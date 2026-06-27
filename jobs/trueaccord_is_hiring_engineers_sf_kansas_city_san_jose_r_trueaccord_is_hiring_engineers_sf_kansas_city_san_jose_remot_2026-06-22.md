@@ -2,7 +2,8 @@
 title: "Trueaccord Is Hiring Engineers (Sf, Kansas City, San Jose, Remote) And Product - Two Pms, One Director Of Product, And Vp Of Product."
 company: "TrueAccord is hiring engineers (SF, Kansas City, San Jose, r"
 match_score: 12
-status: "Ready to Apply"
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["director of product"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+status: Junk
 url: "https://news.ycombinator.com/item?id=22668986"
 date_added: "2026-06-22"
 source: "Hacker News"

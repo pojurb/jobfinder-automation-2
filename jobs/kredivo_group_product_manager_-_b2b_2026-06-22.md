@@ -2,6 +2,7 @@
 title: "Product Manager - B2B"
 company: "Kredivo Group"
 match_score: 24
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["b2b", "ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["jakarta", "hybrid"]}]'
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-manager-b2b-at-kredivo-group-4254100734"
 date_added: "2026-06-22"

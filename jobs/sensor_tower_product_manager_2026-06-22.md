@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "Sensor Tower"
 match_score: 18
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "infrastructure"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}]'
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22675988"
 date_added: "2026-06-22"

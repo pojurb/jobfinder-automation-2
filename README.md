@@ -62,3 +62,8 @@ Run `python build.py` to regenerate the dashboard with the updated statuses.
 ## ⚙️ Requirements
 - Python 3.x
 - No heavy external dependencies (uses standard library `urllib`, `html.parser`, etc. where possible).
+
+## 🤖 Automation (Windows)
+To automatically run the scraper in the background:
+1. Run `setup_task.bat` to create a scheduled task that runs `auto_scrape.bat`.
+2. Or use `sync.py` if you prefer a Python-based background worker.

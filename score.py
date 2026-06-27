@@ -5,6 +5,9 @@ Matches scraped jobs against CV profile using weighted keyword analysis.
 """
 
 import os
+import sys
+if sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
 import re
 import json
 import argparse
@@ -106,8 +109,8 @@ def keyword_score(job_text, profile):
     return min(score, 100), breakdown
 
 
-def update_job_score(filepath, new_score):
-    """Update the match_score field in a job's YAML frontmatter."""
+def update_job_score(filepath, new_score, breakdown_json, new_status=None):
+    """Update the match_score, score_breakdown, and optionally status in a job's YAML frontmatter."""
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
@@ -119,6 +122,34 @@ def update_job_score(filepath, new_score):
         count=1,
         flags=re.MULTILINE,
     )
+
+    # Add or update score_breakdown
+    if "score_breakdown:" in updated:
+        updated = re.sub(
+            r"^score_breakdown:.*",
+            f"score_breakdown: '{breakdown_json}'",
+            updated,
+            count=1,
+            flags=re.MULTILINE,
+        )
+    else:
+        # Insert after match_score
+        updated = re.sub(
+            r"^(match_score:.*)$",
+            f"\g<1>\nscore_breakdown: '{breakdown_json}'",
+            updated,
+            count=1,
+            flags=re.MULTILINE,
+        )
+
+    if new_status:
+        updated = re.sub(
+            r"^status:\s*.*",
+            f"status: {new_status}",
+            updated,
+            count=1,
+            flags=re.MULTILINE,
+        )
 
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(updated)
@@ -181,10 +212,17 @@ def main():
         )
 
         score, breakdown = keyword_score(full_text, profile)
-        update_job_score(filepath, score)
+        
+        title = job["metadata"].get("title", "Unknown")[:45]
+        new_status = None
+        spam_regex = re.compile(r"\b(laborer|cashier|delivery|driver|warehouse|nanny|babysitter)\b", re.IGNORECASE)
+        if score < 15 or spam_regex.search(title):
+            new_status = "Junk"
+            
+        breakdown_json = json.dumps(breakdown).replace("'", "''")
+        update_job_score(filepath, score, breakdown_json, new_status)
         scored += 1
 
-        title = job["metadata"].get("title", "Unknown")[:45]
         source = job["metadata"].get("source", "")
 
         if score >= 90:

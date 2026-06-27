@@ -2,6 +2,7 @@
 title: "Product Manager, Guest Discovery & Homepage"
 company: "Airbnb"
 match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "marketplace", "travel"]}, {"category": "Hard Skills", "matched": 4, "total": 24, "weight": 2, "pct": 80, "keywords_hit": ["roadmap", "product strategy", "user research", "product vision"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 4, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["growth", "arr", "engagement", "scale"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-guest-discovery-homepage-at-airbnb-4421279635"
 date_added: "2026-06-22"

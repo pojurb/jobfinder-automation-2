@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "GitLab"
 match_score: 18
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["remote", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "anywhere"]}]'
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22694568"
 date_added: "2026-06-22"

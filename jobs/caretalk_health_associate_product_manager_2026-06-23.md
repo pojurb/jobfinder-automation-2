@@ -2,6 +2,7 @@
 title: "Associate Product Manager"
 company: "CareTalk Health"
 match_score: 19
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "associate product manager"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 status: "Ready to Apply"
 url: "https://remoteok.com/remote-jobs/remote-associate-product-manager-caretalk-health-1133979"
 date_added: "2026-06-23"

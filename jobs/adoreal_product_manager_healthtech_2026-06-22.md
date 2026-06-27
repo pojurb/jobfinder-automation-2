@@ -2,6 +2,7 @@
 title: "Product Manager, HealthTech"
 company: "Adoreal"
 match_score: 85
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 6, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "fintech", "ai", "infrastructure", "platform"]}, {"category": "Hard Skills", "matched": 4, "total": 24, "weight": 2, "pct": 80, "keywords_hit": ["roadmap", "data-driven", "kpi", "requirements"]}, {"category": "Tools", "matched": 4, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "confluence", "figma", "analytics"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "rag", "automation"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-healthtech-at-adoreal-4424746475"
 date_added: "2026-06-22"

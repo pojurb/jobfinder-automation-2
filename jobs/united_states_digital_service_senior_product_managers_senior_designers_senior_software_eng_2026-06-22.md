@@ -2,6 +2,7 @@
 title: "Senior Product Managers, Senior Designers, Senior Software Engineers, Senior Site Reliability Engineers, And More!"
 company: "United States Digital Service"
 match_score: 21
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "senior product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}]'
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22674407"
 date_added: "2026-06-22"

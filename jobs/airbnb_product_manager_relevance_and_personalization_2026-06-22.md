@@ -2,6 +2,7 @@
 title: "Product Manager, Relevance and Personalization"
 company: "Airbnb"
 match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "platform", "marketplace", "travel"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "user research"]}, {"category": "AI & Tech Skills", "matched": 5, "total": 19, "weight": 2.5, "pct": 100, "keywords_hit": ["ai", "llm", "rag", "generative ai", "ai-powered"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 4, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["revenue", "arr", "engagement", "scale"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-relevance-and-personalization-at-airbnb-4411849551"
 date_added: "2026-06-22"

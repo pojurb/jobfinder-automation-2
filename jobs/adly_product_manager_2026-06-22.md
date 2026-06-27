@@ -2,6 +2,7 @@
 title: "Product Manager"
 company: "adly"
 match_score: 80
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "ai", "platform", "marketplace", "startup"]}, {"category": "Hard Skills", "matched": 10, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "user research", "a/b testing", "kpi", "sprint"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["asana"]}, {"category": "AI & Tech Skills", "matched": 7, "total": 19, "weight": 2.5, "pct": 100, "keywords_hit": ["ai", "llm", "claude", "rag", "nlp"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "leadership"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 7, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["revenue", "growth", "retention", "acquisition", "conversion"]}]'
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-at-adly-4418851157"
 date_added: "2026-06-22"

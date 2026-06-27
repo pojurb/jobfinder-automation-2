@@ -2,6 +2,7 @@
 title: "Product Manager, EMEA"
 company: "Airbnb"
 match_score: 73
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "marketplace", "travel"]}, {"category": "Hard Skills", "matched": 5, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "product strategy", "user research", "requirements", "product vision"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 6, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "collaboration", "leadership"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "global", "worldwide"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["arr", "engagement"]}]'
 status: "Ready to Apply"
 url: "https://uk.linkedin.com/jobs/view/product-manager-emea-at-airbnb-4418125795"
 date_added: "2026-06-22"
