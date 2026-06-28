@@ -1,8 +1,9 @@
 ---
 title: "Principal Product Manager Acquisition Products"
 company: "ButterflyMX"
-match_score: 63
+match_score: 78
 score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product management", "principal product manager"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["b2b", "ai", "platform"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "requirements"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "automation"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["remote", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "distributed", "worldwide"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["acquisition", "conversion"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://remoteok.com/remote-jobs/remote-principal-product-manager-acquisition-products-butterflymx-1134023"
 date_added: "2026-06-24"

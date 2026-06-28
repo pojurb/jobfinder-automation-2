@@ -22,33 +22,7 @@ def load_profile():
         return json.load(f)
 
 
-def load_job(filepath):
-    """Parse a job markdown file and return metadata + body."""
-    with open(filepath, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    parts = re.split(r"^---\s*$", content, maxsplit=2, flags=re.MULTILINE)
-
-    if len(parts) < 3:
-        return None
-
-    frontmatter = parts[1].strip()
-    body = parts[2].strip()
-
-    metadata = {}
-    for line in frontmatter.splitlines():
-        if ":" in line:
-            key, value = line.split(":", 1)
-            key = key.strip()
-            value = value.strip().strip('"').strip("'")
-            if key == "match_score":
-                try:
-                    value = int(value)
-                except ValueError:
-                    value = 0
-            metadata[key] = value
-
-    return {"metadata": metadata, "body": body}
+from utils import load_job
 
 
 def keyword_score(job_text, profile):
@@ -109,8 +83,8 @@ def keyword_score(job_text, profile):
     return min(score, 100), breakdown
 
 
-def update_job_score(filepath, new_score, breakdown_json, new_status=None):
-    """Update the match_score, score_breakdown, and optionally status in a job's YAML frontmatter."""
+def update_job_score(filepath, new_score, breakdown_json, new_status=None, description_quality=None):
+    """Update the match_score, score_breakdown, description_quality, and optionally status in a job's YAML frontmatter."""
     with open(filepath, "r", encoding="utf-8") as f:
         content = f.read()
 
@@ -142,10 +116,32 @@ def update_job_score(filepath, new_score, breakdown_json, new_status=None):
             flags=re.MULTILINE,
         )
 
+    # Add or update description_quality
+    if description_quality:
+        if "description_quality:" in updated:
+            updated = re.sub(
+                r"^description_quality:.*",
+                f"description_quality: \"{description_quality}\"",
+                updated,
+                count=1,
+                flags=re.MULTILINE,
+            )
+        else:
+            # Insert after score_breakdown
+            updated = re.sub(
+                r"^(score_breakdown:.*)$",
+                f"\g<1>\ndescription_quality: \"{description_quality}\"",
+                updated,
+                count=1,
+                flags=re.MULTILINE,
+            )
+
     if new_status:
+        # Ensure status is properly quoted if needed or clean
+        status_val = f'"{new_status}"' if not new_status.startswith('"') else new_status
         updated = re.sub(
             r"^status:\s*.*",
-            f"status: {new_status}",
+            f"status: {status_val}",
             updated,
             count=1,
             flags=re.MULTILINE,
@@ -200,27 +196,55 @@ def main():
         if not job:
             continue
 
-        # Combine all text fields for scoring
+        # Title matching bonus logic
+        target_roles = profile.get("target_roles", ["Product Manager", "Product Owner", "Senior Product Manager"])
+        title = job["metadata"].get("title", "Unknown")
+        title_lower = title.lower()
+        has_target_role = any(role.lower() in title_lower for role in target_roles)
+        title_bonus = 15 if has_target_role else 0
+
+        # Word count evaluation
+        description = job["body"]
+        word_count = len(description.split())
+        if word_count < 30:
+            description_quality = "thin"
+            confidence = 0.6
+        elif word_count < 100:
+            description_quality = "partial"
+            confidence = 0.8
+        else:
+            description_quality = "full"
+            confidence = 1.0
+
+        # Combine text fields for keyword search, without title repeat
         full_text = " ".join(
             [
-                job["metadata"].get("title", "") * 3,  # Title weighted 3x
+                title,
                 job["metadata"].get("company", ""),
                 job["metadata"].get("location", ""),
                 job["metadata"].get("work_type", ""),
-                job["body"],
+                description,
             ]
         )
 
-        score, breakdown = keyword_score(full_text, profile)
+        raw_score, breakdown = keyword_score(full_text, profile)
         
-        title = job["metadata"].get("title", "Unknown")[:45]
+        # Calculate final boosted score
+        if raw_score > 0:
+            score = min(100, round((raw_score + title_bonus) / confidence))
+        else:
+            score = min(100, raw_score + title_bonus)
+        
+        title_short = title[:45]
         new_status = None
         spam_regex = re.compile(r"\b(laborer|cashier|delivery|driver|warehouse|nanny|babysitter)\b", re.IGNORECASE)
-        if score < 15 or spam_regex.search(title):
+        if spam_regex.search(title_short):
+            new_status = "Junk"
+        elif score < 15 and word_count >= 100:
             new_status = "Junk"
             
         breakdown_json = json.dumps(breakdown).replace("'", "''")
-        update_job_score(filepath, score, breakdown_json, new_status)
+        update_job_score(filepath, score, breakdown_json, new_status, description_quality)
         scored += 1
 
         source = job["metadata"].get("source", "")

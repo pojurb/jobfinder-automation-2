@@ -1,8 +1,9 @@
 ---
 title: "Product Manager"
 company: "Aperia"
-match_score: 65
+match_score: 80
 score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product lead", "product management", "principal product manager"]}, {"category": "Domain Match", "matched": 6, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "fintech", "ai", "platform", "enterprise"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "requirements", "product vision"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["enterprise"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/product-manager-at-aperia-4405252821"
 date_added: "2026-06-22"
@@ -10,9 +11,6 @@ source: "LinkedIn"
 location: "United States"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: United States
-- Visit the link for full job details.
 
 ### Full Job Description
 Summary 

@@ -1,8 +1,9 @@
 ---
 title: "Product Manager"
 company: "Nova Credit (YC W12)"
-match_score: 21
+match_score: 36
 score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "head of product"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22667928"
 date_added: "2026-06-22"

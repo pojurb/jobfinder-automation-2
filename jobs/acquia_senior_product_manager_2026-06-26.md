@@ -1,8 +1,9 @@
 ---
 title: "Senior Product Manager"
 company: "Acquia"
-match_score: 70
+match_score: 85
 score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 7, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "b2b", "ai", "infrastructure", "platform"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "product lifecycle"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 7, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 7, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["revenue", "growth", "conversion", "arr", "scale"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://ca.linkedin.com/jobs/view/senior-product-manager-at-acquia-4416962908"
 date_added: "2026-06-26"
@@ -10,9 +11,6 @@ source: "LinkedIn"
 location: "Canada"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: Canada
-- Visit the link for full job details.
 
 ### Full Job Description
 About Acquia

@@ -1,8 +1,9 @@
 ---
 title: "Senior Product Manager- Retention"
 company: "Apollo Hospitals Enterprises Limited"
-match_score: 56
+match_score: 71
 score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "platform", "marketplace", "enterprise"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["retention"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 5, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["growth", "retention", "conversion", "engagement", "enterprise"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-retention-at-apollo-hospitals-enterprises-limited-4426029548"
 date_added: "2026-06-22"

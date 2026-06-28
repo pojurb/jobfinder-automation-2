@@ -1,8 +1,9 @@
 ---
 title: "Product manager"
 company: "DUÄAST"
-match_score: 12
+match_score: 34
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+description_quality: "partial"
 status: Junk
 url: "https://remoteok.com/remote-jobs/remote-product-manager-dueast-1134144"
 date_added: "2026-06-24"

@@ -1,9 +1,10 @@
 ---
 title: "LABORER"
 company: "Portales Fire Department"
-match_score: 6
+match_score: 8
 score_breakdown: '[{"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
-status: Junk
+description_quality: "partial"
+status: "Junk"
 url: "https://remoteok.com/remote-jobs/remote-laborer-portales-fire-department-1134147"
 date_added: "2026-06-24"
 source: "RemoteOK"

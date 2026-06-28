@@ -1,8 +1,9 @@
 ---
 title: "Principal Product Manager"
 company: "ActiveCampaign"
-match_score: 76
+match_score: 91
 score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product lead", "product management", "principal product manager"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "infrastructure", "platform", "startup"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "product vision"]}, {"category": "AI & Tech Skills", "matched": 5, "total": 19, "weight": 2.5, "pct": 100, "keywords_hit": ["ai", "artificial intelligence", "rag", "automation", "ai product"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "collaboration", "leadership", "autonomous"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 3, "total": 16, "weight": 1.5, "pct": 75, "keywords_hit": ["growth", "engagement", "scale"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/principal-product-manager-at-activecampaign-4431862945"
 date_added: "2026-06-26"
@@ -10,9 +11,6 @@ source: "LinkedIn"
 location: "United States"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: United States
-- Visit the link for full job details.
 
 ### Full Job Description
 Active Intelligence is already live — autonomous agents serving 180,000+ businesses, with real traction and a roadmap that gets more ambitious with every release. What we need now is the product leader who accelerates the layer that makes all of it smarter.

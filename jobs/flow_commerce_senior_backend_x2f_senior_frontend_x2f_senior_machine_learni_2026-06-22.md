@@ -1,8 +1,9 @@
 ---
 title: "Senior Backend &#X2F; Senior Frontend &#X2F; Senior Machine Learning&#X2F; Senior Product Designer &#X2F; Senior Product Manager &#X2F; Solutions Engineer"
 company: "Flow Commerce"
-match_score: 46
+match_score: 61
 score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "senior product manager"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "ai", "platform", "e-commerce"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "machine learning"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["conversion"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22667528"
 date_added: "2026-06-22"

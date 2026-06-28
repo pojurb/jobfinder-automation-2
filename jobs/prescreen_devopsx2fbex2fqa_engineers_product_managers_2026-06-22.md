@@ -1,8 +1,9 @@
 ---
 title: "Devops&#X2F;Be&#X2F;Qa Engineers   Product Managers"
 company: "Prescreen"
-match_score: 18
+match_score: 41
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "startup"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}]'
+description_quality: "partial"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22667792"
 date_added: "2026-06-22"

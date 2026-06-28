@@ -1,8 +1,9 @@
 ---
 title: "Staff Product Manager Product Information Management"
 company: "HighLevel"
-match_score: 56
+match_score: 71
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "infrastructure", "platform"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "requirements"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "automation", "ai-powered"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "collaboration"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "distributed", "global", "worldwide"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://remoteok.com/remote-jobs/remote-staff-product-manager-product-information-management-highlevel-1133598"
 date_added: "2026-06-18"

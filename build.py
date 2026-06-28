@@ -17,39 +17,7 @@ JOBS_DIR = "jobs"
 OUTPUT_FILE = "index.html"
 
 
-def parse_markdown(filepath):
-    """Parse a markdown file into metadata dict + body string."""
-    with open(filepath, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    parts = re.split(r"^---\s*$", content, maxsplit=2, flags=re.MULTILINE)
-
-    if len(parts) >= 3:
-        frontmatter = parts[1].strip()
-        body = parts[2].strip()
-    else:
-        frontmatter = ""
-        body = content.strip()
-
-    metadata = {}
-    for line in frontmatter.splitlines():
-        if ":" in line:
-            key, value = line.split(":", 1)
-            key = key.strip()
-            value = value.strip().strip('"').strip("'")
-            if key == "match_score":
-                try:
-                    value = int(value)
-                except ValueError:
-                    value = 0
-            if key == "score_breakdown":
-                try:
-                    value = json.loads(value.replace("''", "'"))
-                except Exception:
-                    pass
-            metadata[key] = value
-
-    return {"metadata": metadata, "body": body}
+from utils import load_job
 
 
 def main():
@@ -60,11 +28,11 @@ def main():
     for filename in sorted(os.listdir(JOBS_DIR)):
         if filename.endswith(".md"):
             filepath = os.path.join(JOBS_DIR, filename)
-            job = parse_markdown(filepath)
+            job = load_job(filepath)
             job["id"] = filename.replace(".md", "")
             jobs.append(job)
 
-    jobs_json = json.dumps(jobs, ensure_ascii=False)
+    jobs_json = json.dumps(jobs, ensure_ascii=True).replace("</", "<\\/")
     build_ts = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     # Collect unique sources for the filter dropdown
@@ -120,6 +88,7 @@ def main():
     </style>
 </head>
 <body class="bg-[#0a0f1a] text-slate-200 min-h-screen">
+    <script type="application/json" id="jobs-data">{jobs_json}</script>
 
     <!-- Background Gradient Blobs -->
     <div class="fixed inset-0 overflow-hidden pointer-events-none">
@@ -144,19 +113,19 @@ def main():
 
                 <!-- Metrics -->
                 <div class="flex gap-3 w-full lg:w-auto">
-                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px]">
+                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px] cursor-pointer hover:bg-slate-700/60 transition-colors" onclick="window._quickFilter('total')">
                         <div class="text-2xl font-bold text-white mb-0.5" id="m-total">0</div>
                         <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Total</div>
                     </div>
-                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px]">
+                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px] cursor-pointer hover:bg-slate-700/60 transition-colors" onclick="window._quickFilter('high')">
                         <div class="text-2xl font-bold text-emerald-400 mb-0.5" id="m-high">0</div>
                         <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">High Match</div>
                     </div>
-                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px]">
+                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px] cursor-pointer hover:bg-slate-700/60 transition-colors" onclick="window._quickFilter('applied')">
                         <div class="text-2xl font-bold text-blue-400 mb-0.5" id="m-applied">0</div>
                         <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Applied</div>
                     </div>
-                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px]">
+                    <div class="flex-1 bg-slate-800/40 backdrop-blur rounded-2xl p-4 border border-slate-700/40 text-center min-w-[100px] cursor-pointer hover:bg-slate-700/60 transition-colors" onclick="window._quickFilter('new')">
                         <div class="text-2xl font-bold text-amber-400 mb-0.5" id="m-new">0</div>
                         <div class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">New Today</div>
                     </div>
@@ -215,6 +184,11 @@ def main():
 
         <!-- Grid -->
         <div id="jobs-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        </div>
+
+        <!-- Load More Container -->
+        <div class="mt-8 flex justify-center w-full" id="load-more-container">
+            <button id="load-more-btn" class="bg-slate-800/80 hover:bg-slate-700 text-slate-200 font-semibold py-3 px-6 rounded-xl border border-slate-700/60 backdrop-blur transition-all hidden">Load More Jobs</button>
         </div>
 
         <!-- Modal -->
@@ -297,7 +271,7 @@ def main():
     (function() {{
         'use strict';
 
-        const DATA = {jobs_json};
+        const DATA = JSON.parse(document.getElementById('jobs-data').textContent);
         const TODAY = new Date().toISOString().slice(0, 10);
 
         // State
@@ -306,8 +280,10 @@ def main():
         let filterSource = 'All';
         let filterScore = 'All';
         let filterWorkType = 'All';
+        let filterDate = 'All';
         let searchQuery = '';
         let visible = [];
+        let limit = 40;
 
         // DOM refs
         const grid        = document.getElementById('jobs-grid');
@@ -319,6 +295,7 @@ def main():
         const sortScoreEl = document.getElementById('sort-score');
         const sortDateEl  = document.getElementById('sort-date');
         const resultCount = document.getElementById('result-count');
+        const loadMoreBtn = document.getElementById('load-more-btn');
 
         const overlay  = document.getElementById('modal-overlay');
         const modalBox = document.getElementById('modal-box');
@@ -330,6 +307,13 @@ def main():
             if (s >= 70) return ['bg-blue-500/10','text-blue-400','border-blue-500/20'];
             if (s >= 50) return ['bg-amber-500/10','text-amber-400','border-amber-500/20'];
             return ['bg-slate-700/30','text-slate-400','border-slate-600/30'];
+        }}
+
+        function scoreGradient(s) {{
+            if (s >= 90) return 'from-emerald-500 to-green-500';
+            if (s >= 70) return 'from-blue-500 to-indigo-500';
+            if (s >= 50) return 'from-amber-500 to-orange-500';
+            return 'from-slate-600 to-slate-700';
         }}
 
         function sourceIcon(src) {{
@@ -381,6 +365,7 @@ def main():
                 .replace(/^### (.*)$/gm, '<h3 class="text-base font-bold text-white mt-5 mb-2">$1</h3>')
                 .replace(/^## (.*)$/gm, '<h2 class="text-lg font-bold text-white mt-6 mb-3">$1</h2>')
                 .replace(/^# (.*)$/gm, '<h1 class="text-xl font-bold text-white mt-7 mb-4">$1</h1>')
+                .replace(/`([^`]+)`/g, '<code class="bg-slate-800 text-blue-400 px-1.5 py-0.5 rounded text-xs font-mono">$1</code>')
                 .replace(/\\*\\*(.+?)\\*\\*/g, '<strong class="text-white">$1</strong>')
                 .replace(/\\*(.+?)\\*/g, '<em>$1</em>')
                 .replace(/\\[([^\\]]+)\\]\\(([^)]+)\\)/g, '<a href="$2" target="_blank" class="text-blue-400 hover:underline">$1</a>')
@@ -429,8 +414,11 @@ def main():
 
                 const matchWorkType = filterWorkType === 'All' || 
                                       (m.work_type && m.work_type.toLowerCase().includes(filterWorkType.toLowerCase()));
+                
+                const matchDate = filterDate === 'All' || 
+                                  (filterDate === 'Today' && isNew(m.date_added));
 
-                return matchText && matchStatus && matchSource && matchScore && matchWorkType;
+                return matchText && matchStatus && matchSource && matchScore && matchWorkType && matchDate;
             }});
 
             visible.sort(function(a, b) {{
@@ -442,10 +430,18 @@ def main():
 
             if (!visible.length) {{
                 grid.innerHTML = '<div class="col-span-full py-20 flex flex-col items-center text-slate-600"><svg class="w-14 h-14 mb-4 opacity-40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><p class="text-base font-medium">No matching jobs found.</p></div>';
+                loadMoreBtn.classList.add('hidden');
                 return;
             }}
 
-            grid.innerHTML = visible.map(function(job, i) {{
+            const sliced = visible.slice(0, limit);
+            if (limit < visible.length) {{
+                loadMoreBtn.classList.remove('hidden');
+            }} else {{
+                loadMoreBtn.classList.add('hidden');
+            }}
+
+            grid.innerHTML = sliced.map(function(job, i) {{
                 const m = job.metadata;
                 const score = m.match_score || 0;
                 const sc = scoreColor(score);
@@ -455,15 +451,18 @@ def main():
                 const delay = Math.min(i * 40, 600);
                 const loc = m.location && m.location !== 'See posting' && m.location !== 'Unknown' ? m.location : '';
                 const wt = m.work_type && m.work_type !== 'See posting' && m.work_type !== 'Unknown' ? m.work_type : '';
+                const isThin = m.description_quality === 'thin';
 
                 return '<div class="card-shine animate-card bg-[#111827]/80 border border-slate-700/40 rounded-2xl p-5 hover:border-slate-500/60 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-300 flex flex-col h-full" style="animation-delay:' + delay + 'ms">'
+                    + '<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ' + scoreGradient(score) + '"></div>'
                     + '<div class="flex justify-between items-start mb-4 cursor-pointer" onclick="window._openModal(' + i + ')">'
                     +   '<div class="flex items-center gap-2">'
                     +     '<span class="text-sm font-bold px-2.5 py-1 rounded-lg border ' + sc.join(' ') + '">' + score + '</span>'
                     +     (isNewJob ? '<span class="new-pulse text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">NEW</span>' : '')
                     +     (stale ? '<span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-slate-500/10 text-slate-400 border border-slate-500/20">STALE</span>' : '')
+                    +     (isThin ? '<span class="text-[9px] font-bold uppercase px-2 py-0.5 rounded bg-red-500/10 text-red-400 border border-red-500/20">THIN JD</span>' : '')
                     +   '</div>'
-                    +   '<select onclick="event.stopPropagation()" onchange="window._setStatus(\'' + job.id + '\', this.value)" class="text-[10px] font-semibold text-slate-300 px-2 py-1 bg-slate-800/80 rounded-lg border border-slate-600 outline-none cursor-pointer">'
+                    +   '<select onclick="event.stopPropagation()" onchange="window._setStatus(\\\'' + job.id + '\\\', this.value)" class="text-[10px] font-semibold text-slate-300 px-2 py-1 bg-slate-800/80 rounded-lg border border-slate-600 outline-none cursor-pointer">'
                     +     '<option value="Ready to Apply" ' + (status==='Ready to Apply'?'selected':'') + '>Ready to Apply</option>'
                     +     '<option value="Applied" ' + (status==='Applied'?'selected':'') + '>Applied</option>'
                     +     '<option value="Interviewing" ' + (status==='Interviewing'?'selected':'') + '>Interviewing</option>'
@@ -478,6 +477,7 @@ def main():
                     + '<div class="mt-auto pt-3 border-t border-slate-800/60 flex justify-between items-center text-[10px] text-slate-600 font-medium">'
                     +   '<span>' + (m.date_added || '') + '</span>'
                     +   '<span>' + sourceIcon(m.source) + ' ' + (m.source || '') + '</span>'
+                    + '</div>'
                     + '</div>'
                     + '</div>';
             }}).join('');
@@ -528,7 +528,16 @@ def main():
             
             const promptBtn = document.getElementById('md-ai-prompt');
             promptBtn.onclick = function() {{
-                const prompt = "Write a cover letter for the position of " + (m.title||"") + " at " + (m.company||"") + ". Here is the job description:\n\n" + (job.body||"") + "\n\nPlease base it on my attached resume.";
+                let breakdownText = (m.score_breakdown || []).map(function(b) {{
+                    return '- ' + b.category + ': matched ' + b.matched + '/' + b.total + ' keywords (' + (b.keywords_hit || []).join(', ') + ')';
+                }}).join('\\n');
+                const prompt = 'Write a tailored cover letter for:\\n'
+                    + 'Role: ' + (m.title || '') + '\\n'
+                    + 'Company: ' + (m.company || '') + '\\n'
+                    + 'Source: ' + (m.source || '') + '\\n\\n'
+                    + 'Matched Keyword Categories:\\n' + breakdownText + '\\n\\n'
+                    + 'Job Description:\\n' + (job.body || '') + '\\n\\n'
+                    + 'Please write a compelling cover letter highlighting these specific matched skills and domains. Base it on my resume.';
                 navigator.clipboard.writeText(prompt);
                 const originalHtml = promptBtn.innerHTML;
                 promptBtn.innerHTML = '✅ Copied!';
@@ -552,24 +561,53 @@ def main():
         document.addEventListener('keydown', function(e) {{ if (e.key === 'Escape') closeModal(); }});
 
         // ─── Event Bindings ─────────────────────────────
-        searchEl.addEventListener('input', function(e) {{ searchQuery = e.target.value; render(); }});
-        statusEl.addEventListener('change', function(e) {{ filterStatus = e.target.value; render(); }});
-        sourceEl.addEventListener('change', function(e) {{ filterSource = e.target.value; render(); }});
-        scoreEl.addEventListener('change', function(e) {{ filterScore = e.target.value; render(); }});
-        workTypeEl.addEventListener('change', function(e) {{ filterWorkType = e.target.value; render(); }});
+        searchEl.addEventListener('input', function(e) {{ searchQuery = e.target.value; filterDate = 'All'; limit = 40; render(); }});
+        statusEl.addEventListener('change', function(e) {{ filterStatus = e.target.value; filterDate = 'All'; limit = 40; render(); }});
+        sourceEl.addEventListener('change', function(e) {{ filterSource = e.target.value; filterDate = 'All'; limit = 40; render(); }});
+        scoreEl.addEventListener('change', function(e) {{ filterScore = e.target.value; filterDate = 'All'; limit = 40; render(); }});
+        workTypeEl.addEventListener('change', function(e) {{ filterWorkType = e.target.value; filterDate = 'All'; limit = 40; render(); }});
 
         sortScoreEl.addEventListener('click', function() {{
             sortBy = 'score';
+            limit = 40;
             sortScoreEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600/20 text-blue-400 transition-all';
             sortDateEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all';
             render();
         }});
         sortDateEl.addEventListener('click', function() {{
             sortBy = 'date';
+            limit = 40;
             sortDateEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600/20 text-blue-400 transition-all';
             sortScoreEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all';
             render();
         }});
+
+        loadMoreBtn.addEventListener('click', function() {{
+            limit += 40;
+            render();
+        }});
+
+        window._quickFilter = function(type) {{
+            filterStatus = 'All'; statusEl.value = 'All';
+            filterScore = 'All'; scoreEl.value = 'All';
+            filterSource = 'All'; sourceEl.value = 'All';
+            filterWorkType = 'All'; workTypeEl.value = 'All';
+            filterDate = 'All';
+            searchQuery = ''; searchEl.value = '';
+            limit = 40;
+            
+            if (type === 'high') {{
+                filterScore = 'High'; scoreEl.value = 'High';
+            }} else if (type === 'applied') {{
+                filterStatus = 'Applied'; statusEl.value = 'Applied';
+            }} else if (type === 'new') {{
+                filterDate = 'Today';
+                sortBy = 'date';
+                sortDateEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600/20 text-blue-400 transition-all';
+                sortScoreEl.className = 'px-4 py-2 text-xs font-semibold rounded-lg text-slate-400 hover:text-white transition-all';
+            }}
+            render();
+        }};
 
         // ─── Init ───────────────────────────────────────
         updateMetrics();

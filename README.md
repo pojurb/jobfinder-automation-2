@@ -5,9 +5,10 @@ A lightweight, local, flat-file job tracking system that automates the process o
 ## 🚀 Features
 
 - **Multi-Source Scraping**: Automatically fetches job postings from LinkedIn, Hacker News (Who is Hiring), RemoteOK, JobStreet, Indeed, and Glassdoor using direct HTML scraping and DuckDuckGo search proxies to bypass anti-bot protections.
-- **Offline AI Scoring Engine**: Scores each job against your CV/profile locally. It uses a weighted keyword category system (e.g., matching Hard Skills, AI domains, remote preferences) to calculate a match percentage (0-100%).
+- **Robust Web Scraping**: Exponential backoff and retry logic handles rate limits and API failures. Automatically refetches "thin" or stub job descriptions.
+- **Offline AI Scoring Engine**: Scores each job against your CV/profile locally. It uses a weighted keyword category system (e.g., matching Hard Skills, AI domains, remote preferences) and applies a confidence penalty based on description length to calculate a match percentage (0-100%).
 - **Flat-File Database**: All jobs are saved as individual `.md` files in the `./jobs/` directory with YAML frontmatter. This means your data is future-proof, easily editable in any text editor, and version-controllable.
-- **Standalone Interactive Dashboard**: Compiles all Markdown files into a beautiful, single-file `index.html` dashboard using TailwindCSS and vanilla JavaScript.
+- **Standalone Interactive Dashboard**: Compiles all Markdown files into a beautiful, single-file `index.html` dashboard using TailwindCSS and vanilla JavaScript. Includes score gradients, badges, and quick-filter metrics.
 - **Advanced Filtering**: Filter your job pipeline by Match Score (High/Good/Low), Work Type (Remote/Hybrid/On-site), Status, and Source directly in the browser.
 
 ## 📂 Project Structure
@@ -19,6 +20,7 @@ A lightweight, local, flat-file job tracking system that automates the process o
 ├── scrape.py           # The orchestration script to scrape jobs and run the scorer
 ├── score.py            # The offline scoring engine logic
 ├── build.py            # Compiles the jobs into the interactive dashboard
+├── utils.py            # Shared utility library (Markdown parsing, filename sanitization)
 └── index.html          # The generated, standalone dashboard (open in browser)
 ```
 

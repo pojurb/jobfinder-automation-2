@@ -1,8 +1,9 @@
 ---
 title: "Senior Product Manager"
 company: "AppsForBharat"
-match_score: 82
+match_score: 97
 score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "platform", "digital products", "startup", "e-commerce"]}, {"category": "Hard Skills", "matched": 9, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "data-driven", "user research", "kpi", "requirements"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["analytics"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 7, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "worldwide"]}, {"category": "Business Impact", "matched": 9, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["revenue", "growth", "retention", "acquisition", "conversion"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-at-appsforbharat-4417559467"
 date_added: "2026-06-22"

@@ -1,8 +1,9 @@
 ---
 title: "Growth Product Manager"
 company: "AltaML"
-match_score: 59
+match_score: 74
 score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "b2b", "ai", "platform"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "onboarding", "retention"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 4, "total": 16, "weight": 1.5, "pct": 100, "keywords_hit": ["growth", "retention", "scale", "b2b saas"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://remoteok.com/remote-jobs/remote-growth-product-manager-altaml-1133729"
 date_added: "2026-06-20"

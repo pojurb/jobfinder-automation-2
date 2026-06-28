@@ -1,8 +1,9 @@
 ---
 title: "Senior Product Manager"
 company: "Alation"
-match_score: 70
+match_score: 85
 score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "infrastructure", "platform", "enterprise"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["data-driven"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["analytics"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "automation", "ai-powered"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "distributed"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["scale", "enterprise"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-at-alation-4314087548"
 date_added: "2026-06-22"
@@ -10,9 +11,6 @@ source: "LinkedIn"
 location: "Greater Chennai Area"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: Greater Chennai Area
-- Visit the link for full job details.
 
 ### Full Job Description
 Alation is pioneering the next era of 

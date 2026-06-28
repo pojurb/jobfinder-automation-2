@@ -1,8 +1,9 @@
 ---
 title: "Product Manager"
 company: "strongDM"
-match_score: 16
+match_score: 31
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "distributed"]}]'
+description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22668880"
 date_added: "2026-06-22"

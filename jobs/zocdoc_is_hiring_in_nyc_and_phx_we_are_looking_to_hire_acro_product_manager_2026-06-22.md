@@ -1,8 +1,9 @@
 ---
 title: "Product Manager"
 company: "Zocdoc is hiring in NYC and PHX. We are looking to hire acro"
-match_score: 20
+match_score: 44
 score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "director of product", "product management"]}]'
+description_quality: "partial"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22771374"
 date_added: "2026-06-22"

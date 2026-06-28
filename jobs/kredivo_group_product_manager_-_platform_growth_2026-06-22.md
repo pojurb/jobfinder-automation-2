@@ -1,8 +1,9 @@
 ---
 title: "Product Manager - Platform & Growth"
 company: "Kredivo Group"
-match_score: 27
+match_score: 70
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["jakarta", "hybrid"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+description_quality: "thin"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-manager-platform-growth-at-kredivo-group-4416520311"
 date_added: "2026-06-22"

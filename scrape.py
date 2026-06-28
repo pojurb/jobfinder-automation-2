@@ -19,7 +19,6 @@ import sys
 if sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout.reconfigure(encoding='utf-8')
 import subprocess
-import sys
 import argparse
 from html import unescape
 from html.parser import HTMLParser
@@ -68,8 +67,8 @@ def get_headers():
     }
 
 
-def make_request(url, headers=None, timeout=20):
-    """Make an HTTP GET request with SSL bypass and error handling."""
+def make_request(url, headers=None, timeout=20, max_retries=2):
+    """Make an HTTP GET request with SSL bypass, error handling, and retries with backoff."""
     if headers is None:
         headers = get_headers()
     ctx = ssl.create_default_context()
@@ -77,18 +76,40 @@ def make_request(url, headers=None, timeout=20):
     ctx.verify_mode = ssl.CERT_NONE
 
     req = urllib.request.Request(url, headers=headers)
-    try:
-        with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
-            return resp.read().decode("utf-8", errors="replace")
-    except urllib.error.HTTPError as e:
-        print(f"    ⚠ HTTP {e.code} for {url[:80]}...")
-        return None
-    except urllib.error.URLError as e:
-        print(f"    ⚠ URL error: {e.reason}")
-        return None
-    except Exception as e:
-        print(f"    ⚠ Request failed: {e}")
-        return None
+    
+    for attempt in range(max_retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout, context=ctx) as resp:
+                return resp.read().decode("utf-8", errors="replace")
+        except urllib.error.HTTPError as e:
+            # Handle rate limit (429) specially
+            if e.code == 429:
+                retry_after = e.headers.get("Retry-After")
+                wait_time = int(retry_after) if retry_after and retry_after.isdigit() else (10 * (2 ** attempt))
+                print(f"    ⚠ HTTP 429 (Rate Limited) for {url[:70]}. Waiting {wait_time}s (attempt {attempt + 1}/{max_retries + 1})...")
+                if attempt < max_retries:
+                    time.sleep(wait_time)
+                    continue
+            elif e.code in [500, 502, 503, 504]:
+                wait_time = 3 * (2 ** attempt)
+                print(f"    ⚠ HTTP {e.code} for {url[:70]}. Retrying in {wait_time}s (attempt {attempt + 1}/{max_retries + 1})...")
+                if attempt < max_retries:
+                    time.sleep(wait_time)
+                    continue
+            else:
+                print(f"    ⚠ HTTP {e.code} for {url[:80]}...")
+                return None
+        except (urllib.error.URLError, TimeoutError) as e:
+            wait_time = 3 * (2 ** attempt)
+            print(f"    ⚠ Request failed ({e}). Retrying in {wait_time}s (attempt {attempt + 1}/{max_retries + 1})...")
+            if attempt < max_retries:
+                time.sleep(wait_time)
+                continue
+        except Exception as e:
+            print(f"    ⚠ Request failed: {e}")
+            return None
+            
+    return None
 
 
 def sanitize_filename(text):
@@ -443,6 +464,62 @@ def scrape_remoteok():
 
 
 # ============================================================
+#  SCRAPER: Remotive (JSON API)
+# ============================================================
+
+def scrape_remotive():
+    """Scrape Remotive JSON API for PM roles."""
+    print("\n  📡 [New] Remotive (JSON API)...")
+    jobs = []
+
+    headers = get_headers()
+    headers["Accept"] = "application/json"
+    data = make_request("https://remotive.com/api/remote-jobs?category=product", headers=headers)
+
+    if not data:
+        print("    ❌ Could not reach Remotive API")
+        return jobs
+
+    try:
+        response = json.loads(data)
+        listings = response.get("jobs", [])
+
+        for item in listings:
+            position = item.get("title", "").lower()
+            
+            if not any(kw in position for kw in PM_KEYWORDS):
+                continue
+
+            desc = strip_html(item.get("description", ""))
+
+            raw_date = item.get("publication_date", "")[:10]
+            try:
+                if raw_date:
+                    datetime.strptime(raw_date, "%Y-%m-%d")
+                else:
+                    raw_date = datetime.now().strftime("%Y-%m-%d")
+            except ValueError:
+                raw_date = datetime.now().strftime("%Y-%m-%d")
+
+            jobs.append({
+                "title": item.get("title", "Product Manager"),
+                "company": item.get("company_name", "Unknown"),
+                "url": item.get("url", ""),
+                "date_added": raw_date,
+                "source": "Remotive",
+                "location": item.get("candidate_required_location", "Remote"),
+                "work_type": "Remote",
+                "description": f"### Job Description\n{desc[:4000]}",
+            })
+
+    except (json.JSONDecodeError, TypeError) as e:
+        print(f"    ⚠ JSON parse error: {e}")
+
+    print(f"    ✅ Found {len(jobs)} PM jobs")
+    return jobs
+
+
+# ============================================================
 #  SCRAPER: Hacker News "Who is Hiring" (Algolia API)
 # ============================================================
 
@@ -769,8 +846,8 @@ class LinkedInJobParser(HTMLParser):
 
 
 def scrape_linkedin():
-    """Scrape LinkedIn public job search (no login required)."""
-    print("\n  📡 [3/6] LinkedIn (public jobs page)...")
+    """Scrape LinkedIn public job search (no login required) using fragment API with pagination."""
+    print("\n  📡 [3/6] LinkedIn (fragment API)...")
     jobs = []
 
     searches = [
@@ -781,39 +858,40 @@ def scrape_linkedin():
 
     for keywords, location, extra in searches:
         loc_encoded = urllib.parse.quote_plus(location)
-        url = f"https://www.linkedin.com/jobs/search/?keywords={keywords}&location={loc_encoded}&{extra}&sortBy=DD"
-        data = make_request(url)
-        if not data:
-            continue
+        for start in range(0, 100, 25):  # 4 pages
+            url = f"https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search?keywords={keywords}&location={loc_encoded}&{extra}&sortBy=DD&start={start}"
+            data = make_request(url)
+            if not data:
+                continue
 
-        parser = LinkedInJobParser()
-        try:
-            parser.feed(data)
-        except Exception:
-            pass
+            parser = LinkedInJobParser()
+            try:
+                parser.feed(data)
+            except Exception:
+                pass
 
-        for r in parser.jobs:
-            loc = r.get("location", "See posting").strip()
-            wt = infer_work_type(loc)
-            if wt == "See posting" and "f_WT=2" in extra:
-                wt = "Remote"
+            for r in parser.jobs:
+                loc = r.get("location", "See posting").strip()
+                wt = infer_work_type(loc)
+                if wt == "See posting" and "f_WT=2" in extra:
+                    wt = "Remote"
 
-            job_url = r.get("url", "").strip()
-            if job_url and not job_url.startswith("http"):
-                job_url = "https://www.linkedin.com" + job_url
+                job_url = r.get("url", "").strip()
+                if job_url and not job_url.startswith("http"):
+                    job_url = "https://www.linkedin.com" + job_url
 
-            jobs.append({
-                "title": r.get("title", "Product Manager").strip(),
-                "company": r.get("company", "Unknown").strip(),
-                "url": job_url,
-                "date_added": datetime.now().strftime("%Y-%m-%d"),
-                "source": "LinkedIn",
-                "location": loc,
-                "work_type": wt,
-                "description": f"### LinkedIn Job\n- **Location**: {loc}\n- Visit the link for full job details.",
-            })
+                jobs.append({
+                    "title": r.get("title", "Product Manager").strip(),
+                    "company": r.get("company", "Unknown").strip(),
+                    "url": job_url,
+                    "date_added": datetime.now().strftime("%Y-%m-%d"),
+                    "source": "LinkedIn",
+                    "location": loc,
+                    "work_type": wt,
+                    "description": f"### LinkedIn Job\n- **Location**: {loc}\n- Visit the link for full job details.",
+                })
 
-        time.sleep(random.uniform(2, 4))
+            time.sleep(random.uniform(2, 4))
 
     unique = dedupe_jobs(jobs)
 
@@ -829,6 +907,11 @@ def scrape_linkedin():
 def scrape_glassdoor():
     """Scrape Glassdoor via DuckDuckGo search."""
     return _scrape_via_duckduckgo("glassdoor.com/job-listing", "Glassdoor", 5)
+
+
+def scrape_glints():
+    """Scrape Glints via DuckDuckGo search."""
+    return _scrape_via_duckduckgo("glints.com/id/opportunities/jobs", "Glints", 7)
 
 
 # ============================================================
@@ -906,41 +989,43 @@ class JobStreetParser(HTMLParser):
 
 
 def scrape_jobstreet():
-    """Scrape JobStreet Indonesia directly, with DDG fallback."""
+    """Scrape JobStreet Indonesia directly, with pagination and DDG fallback."""
     print("\n  📡 [6/6] JobStreet Indonesia (direct)...")
     jobs = []
 
-    urls = [
+    base_urls = [
         "https://www.jobstreet.co.id/product-manager-jobs",
         "https://www.jobstreet.co.id/senior-product-manager-jobs",
         "https://www.jobstreet.co.id/product-owner-jobs",
     ]
 
-    for url in urls:
-        data = make_request(url)
-        if not data:
-            continue
+    for base_url in base_urls:
+        for page in range(1, 4):  # 3 pages
+            url = f"{base_url}?page={page}" if page > 1 else base_url
+            data = make_request(url)
+            if not data:
+                continue
 
-        parser = JobStreetParser()
-        try:
-            parser.feed(data)
-        except Exception:
-            pass
+            parser = JobStreetParser()
+            try:
+                parser.feed(data)
+            except Exception:
+                pass
 
-        for r in parser.jobs:
-            loc = r.get("location", "Indonesia").strip()
-            jobs.append({
-                "title": r.get("title", "Product Manager").strip(),
-                "company": r.get("company", "Unknown").strip(),
-                "url": r.get("url", ""),
-                "date_added": datetime.now().strftime("%Y-%m-%d"),
-                "source": "JobStreet",
-                "location": loc or "Indonesia",
-                "work_type": "See posting",
-                "description": f"### JobStreet Listing\n- **Location**: {loc or 'Indonesia'}\n- Visit the link for full job details.",
-            })
+            for r in parser.jobs:
+                loc = r.get("location", "Indonesia").strip()
+                jobs.append({
+                    "title": r.get("title", "Product Manager").strip(),
+                    "company": r.get("company", "Unknown").strip(),
+                    "url": r.get("url", ""),
+                    "date_added": datetime.now().strftime("%Y-%m-%d"),
+                    "source": "JobStreet",
+                    "location": loc or "Indonesia",
+                    "work_type": "See posting",
+                    "description": f"### JobStreet Listing\n- **Location**: {loc or 'Indonesia'}\n- Visit the link for full job details.",
+                })
 
-        time.sleep(random.uniform(1.5, 3))
+            time.sleep(random.uniform(1.5, 3))
 
     unique = dedupe_jobs(jobs)
 
@@ -975,7 +1060,7 @@ def main():
         "--sources",
         type=str,
         default="all",
-        help="Comma-separated: remoteok,hn,linkedin,indeed,glassdoor,jobstreet",
+        help="Comma-separated: remoteok,hn,linkedin,indeed,glassdoor,jobstreet,remotive,glints",
     )
     ap.add_argument("--skip-ai", action="store_true", help="Skip AI scoring")
     ap.add_argument("--rescore", action="store_true", help="Only re-score existing jobs")
@@ -1036,6 +1121,8 @@ def main():
             "indeed": scrape_indeed,
             "glassdoor": scrape_glassdoor,
             "jobstreet": scrape_jobstreet,
+            "remotive": scrape_remotive,
+            "glints": scrape_glints,
         }
 
         if args.sources != "all":
@@ -1066,6 +1153,41 @@ def main():
     print(f"     New saved:  {total_new} (after deduplication)")
     print(f"     Total:     {count_saved_jobs()} jobs in ./jobs/")
     print("─" * 60)
+
+    # Auto-refetch thin descriptions (max 10 per run to avoid rate limits)
+    print("\n  🔄 Running auto-refetch check for thin job descriptions...")
+    refetched = 0
+    refetch_limit = 10
+    for fname in os.listdir(JOBS_DIR):
+        if not fname.endswith(".md"): continue
+        if refetched >= refetch_limit: break
+        
+        filepath = os.path.join(JOBS_DIR, fname)
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                content = f.read()
+            
+            parts = content.split("---", 2)
+            if len(parts) < 3: continue
+            
+            body = parts[2].strip()
+            if "Visit the link for full details" in body or "Visit the link for full job details" in body or len(body) < 150:
+                url_m = re.search(r'^url:\s*"(.+?)"', content, re.MULTILINE)
+                source_m = re.search(r'^source:\s*"(.+?)"', content, re.MULTILINE)
+                if url_m and source_m:
+                    url = url_m.group(1).replace("%22", '"')
+                    source = source_m.group(1)
+                    if source not in ["Hacker News", "RemoteOK"]:
+                        full_jd = fetch_full_jd(url, source)
+                        if full_jd:
+                            new_content = parts[0] + "---" + parts[1] + "---\n\n### Full Job Description\n" + full_jd + "\n"
+                            with open(filepath, "w", encoding="utf-8") as f:
+                                f.write(new_content)
+                            refetched += 1
+                            print(f"    ✨ Successfully refetched description for {fname}")
+                            time.sleep(random.uniform(1.5, 3))
+        except Exception as e:
+            print(f"    ⚠ Error refetching {fname}: {e}")
 
     # Auto-run scoring
     print("\n  🧠 Running scorer...")

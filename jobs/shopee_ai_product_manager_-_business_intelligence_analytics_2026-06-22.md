@@ -1,8 +1,9 @@
 ---
 title: "AI Product Manager - Business Intelligence & Analytics"
 company: "Shopee"
-match_score: 32
+match_score: 78
 score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["analytics"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "ai product"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "hybrid"]}]'
+description_quality: "thin"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/ai-product-manager-business-intelligence-analytics-at-shopee-4289558735"
 date_added: "2026-06-22"
