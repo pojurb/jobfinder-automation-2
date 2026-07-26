@@ -11,9 +11,6 @@ source: "LinkedIn"
 location: "Bengaluru, Karnataka, India"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: Bengaluru, Karnataka, India
-- Visit the link for full job details.
 
 ### Full Job Description
 About AppsForBharat (Sri Mandir App)

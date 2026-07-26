@@ -11,9 +11,6 @@ source: "LinkedIn"
 location: "Hyderabad, Telangana, India"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: Hyderabad, Telangana, India
-- Visit the link for full job details.
 
 ### Full Job Description
 We are looking for a Senior Product Manager /Retention & LTV to build the engagement layer of Apollo’s Preventive Health engine.
