@@ -1,8 +1,8 @@
 ---
 title: "[OPBG] Product Manager"
 company: "ASUS"
-match_score: 68
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "platform"]}, {"category": "Hard Skills", "matched": 6, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "roadmap", "data-driven", "kpi", "product lifecycle"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+match_score: 58
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["platform"]}, {"category": "Hard Skills", "matched": 6, "total": 31, "weight": 2, "pct": 86, "keywords_hit": ["agile", "roadmap", "data-driven", "kpi", "product lifecycle"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/opbg-product-manager-at-asus-4440613926"
@@ -11,9 +11,6 @@ source: "LinkedIn"
 location: "Jakarta, Indonesia"
 work_type: "See posting"
 ---
-### LinkedIn Job
-- **Location**: Jakarta, Indonesia
-- Visit the link for full job details.
 
 ### Full Job Description
 Ready for a career that's all about growth? We're looking for a Product Manager - Open Platform to join our ASUS family and make an impact in the tech world.

@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "Nas Company"
-match_score: 75
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "ai", "platform", "insurance"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["requirements", "user experience", "product vision"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 3, "total": 16, "weight": 1.5, "pct": 75, "keywords_hit": ["revenue", "growth", "scale"]}]'
+match_score: 66
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["saas", "ai", "platform", "insurance"]}, {"category": "Hard Skills", "matched": 3, "total": 31, "weight": 2, "pct": 43, "keywords_hit": ["requirements", "user experience", "product vision"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 3, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 3, "total": 18, "weight": 1.5, "pct": 75, "keywords_hit": ["revenue", "growth", "scale"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://sg.linkedin.com/jobs/view/product-manager-at-nas-company-4434443339"

@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "MeetMinded"
-match_score: 67
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "platform", "startup"]}, {"category": "Hard Skills", "matched": 7, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "data-driven", "product discovery", "user research", "kpi"]}, {"category": "Tools", "matched": 3, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "notion", "analytics"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["remote", "self-starter"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+match_score: 64
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["ai", "platform", "startup"]}, {"category": "Hard Skills", "matched": 7, "total": 31, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "data-driven", "product discovery", "user research", "kpi"]}, {"category": "Tools", "matched": 3, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "notion", "analytics"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 15, "weight": 1, "pct": 67, "keywords_hit": ["remote", "self-starter"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://si.linkedin.com/jobs/view/product-manager-at-meetminded-4417882305"

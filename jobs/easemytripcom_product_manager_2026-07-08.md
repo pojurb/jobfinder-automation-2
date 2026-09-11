@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "EaseMyTrip.com"
-match_score: 68
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "platform", "travel"]}, {"category": "Hard Skills", "matched": 7, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "roadmap", "product strategy", "data-driven", "sprint"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 8, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "collaboration", "leadership"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["engagement"]}]'
+match_score: 63
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["ai", "platform", "travel"]}, {"category": "Hard Skills", "matched": 7, "total": 31, "weight": 2, "pct": 100, "keywords_hit": ["agile", "roadmap", "product strategy", "data-driven", "sprint"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 8, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "collaboration", "leadership"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/product-manager-at-easemytrip-com-4434546333"

@@ -245,11 +245,14 @@ def main():
 
                     <!-- CTA -->
                     <div class="flex flex-col sm:flex-row gap-3 mb-6">
-                        <a id="md-url" href="#" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg shadow-blue-600/20">
+                        <button id="md-spark-apply" class="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold py-3 px-4 rounded-xl transition-all shadow-lg shadow-amber-500/20 cursor-pointer">
+                            ⚡ Auto-Apply (Gemini Spark)
+                        </button>
+                        <a id="md-url" href="#" target="_blank" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-4 rounded-xl transition-all border border-slate-700">
                             View Original Posting
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
-                        <button id="md-ai-prompt" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-semibold py-3 px-4 rounded-xl transition-all shadow-lg">
+                        <button id="md-ai-prompt" class="flex-1 flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold py-3 px-4 rounded-xl transition-all">
                             ✨ Copy AI Prompt
                         </button>
                     </div>
@@ -474,14 +477,32 @@ def main():
                     + '<h3 class="text-sm font-bold text-white mb-1.5 line-clamp-2 leading-snug hover:text-blue-400 transition-colors">' + (m.title || 'Untitled') + '</h3>'
                     + '<p class="text-xs text-slate-400 font-medium mb-3">' + (m.company || 'Unknown') + '</p>'
                     + (loc || wt ? '<div class="flex flex-wrap gap-1.5 mb-3">' + (loc ? '<span class="text-[10px] text-slate-500 bg-slate-800/40 px-2 py-0.5 rounded-md">📍 ' + loc + '</span>' : '') + (wt ? '<span class="text-[10px] text-slate-500 bg-slate-800/40 px-2 py-0.5 rounded-md">' + wt + '</span>' : '') + '</div>' : '')
-                    + '<div class="mt-auto pt-3 border-t border-slate-800/60 flex justify-between items-center text-[10px] text-slate-600 font-medium">'
+                    + '<div class="mt-auto pt-3 border-t border-slate-800/60 flex justify-between items-center text-[10px] text-slate-600 font-medium mb-3">'
                     +   '<span>' + (m.date_added || '') + '</span>'
                     +   '<span>' + sourceIcon(m.source) + ' ' + (m.source || '') + '</span>'
                     + '</div>'
+                    + '<button onclick="event.stopPropagation(); window._triggerSparkApply(\\\'' + job.id + '\\\', \\\'' + (m.url || '') + '\\\')" class="w-full py-2 px-3 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-slate-950 font-extrabold text-xs rounded-xl shadow-lg shadow-amber-500/10 flex items-center justify-center gap-1.5 transition-all cursor-pointer">'
+                    +   '⚡ Auto-Apply (Gemini Spark)'
+                    + '</button>'
                     + '</div>'
                     + '</div>';
             }}).join('');
         }}
+
+        window._triggerSparkApply = function(jobId, url) {{
+            const cmd = 'python apply.py jobs/' + jobId + '.md';
+            navigator.clipboard.writeText(cmd);
+            
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-6 right-6 z-50 bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 font-extrabold px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-amber-300/40 text-xs animate-bounce';
+            toast.innerHTML = '⚡ Copied Spark Command: <code class="bg-black/20 px-2.5 py-1 rounded-lg font-mono text-[11px]">' + cmd + '</code>';
+            document.body.appendChild(toast);
+            setTimeout(() => toast.remove(), 4500);
+
+            if (url && url.startsWith('http')) {{
+                window.open(url, '_blank');
+            }}
+        }};
 
         // ─── Modal ──────────────────────────────────────
         window._openModal = function(idx) {{
@@ -513,6 +534,11 @@ def main():
             const urlEl = document.getElementById('md-url');
             if (m.url) {{ urlEl.href = m.url; urlEl.style.display = 'flex'; }}
             else {{ urlEl.style.display = 'none'; }}
+
+            const sparkBtn = document.getElementById('md-spark-apply');
+            sparkBtn.onclick = function() {{
+                window._triggerSparkApply(job.id, m.url);
+            }};
             
             const scoreBreakdown = m.score_breakdown || [];
             let bdHtml = '';

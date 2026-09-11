@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "BJAK"
-match_score: 70
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "platform", "insurance"]}, {"category": "Hard Skills", "matched": 4, "total": 24, "weight": 2, "pct": 80, "keywords_hit": ["roadmap", "product strategy", "product lifecycle", "user experience"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["leadership"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "southeast asia", "global"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["conversion", "scale"]}]'
+match_score: 65
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["ai", "platform", "insurance"]}, {"category": "Hard Skills", "matched": 4, "total": 31, "weight": 2, "pct": 57, "keywords_hit": ["roadmap", "product strategy", "product lifecycle", "user experience"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["leadership"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "southeast asia", "global"]}, {"category": "Business Impact", "matched": 2, "total": 18, "weight": 1.5, "pct": 50, "keywords_hit": ["conversion", "scale"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-manager-at-bjak-4418411526"

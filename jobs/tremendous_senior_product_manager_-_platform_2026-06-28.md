@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager - Platform"
 company: "Tremendous"
-match_score: 78
-score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "head of product", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["ai", "infrastructure", "platform"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "ai infrastructure"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "anywhere", "global", "worldwide"]}]'
+match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "head of product", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["ai", "infrastructure", "platform"]}, {"category": "Hard Skills", "matched": 3, "total": 31, "weight": 2, "pct": 43, "keywords_hit": ["roadmap", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 24, "weight": 2.5, "pct": 40, "keywords_hit": ["ai", "ai infrastructure"]}, {"category": "Soft Skills", "matched": 5, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "anywhere", "global", "worldwide"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/senior-product-manager-platform-at-tremendous-4432505305"

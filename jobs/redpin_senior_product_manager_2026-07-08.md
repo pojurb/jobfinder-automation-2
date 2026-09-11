@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager >"
 company: "Redpin"
-match_score: 77
-score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "infrastructure", "platform", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 6, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "hybrid", "apac"]}]'
+match_score: 74
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 22, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "infrastructure", "platform", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 31, "weight": 2, "pct": 43, "keywords_hit": ["roadmap", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 6, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "hybrid", "apac"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-at-redpin-4433232714"

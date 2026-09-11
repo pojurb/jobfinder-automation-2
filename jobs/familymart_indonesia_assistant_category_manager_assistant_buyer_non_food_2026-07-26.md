@@ -1,8 +1,8 @@
 ---
 title: "Assistant Category Manager (Assistant Buyer Non Food)"
 company: "FamilyMart Indonesia"
-match_score: 14
-score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
+match_score: 13
+score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
 description_quality: "full"
 status: "Junk"
 url: "https://www.jobstreet.co.id/job/93115185"

@@ -1,8 +1,8 @@
 ---
 title: "Product Manager (Consumer Market)"
 company: "ASUS"
-match_score: 50
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "marketplace"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["data-driven", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "communication", "strategic", "self-starter"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+match_score: 47
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["ai", "marketplace"]}, {"category": "Hard Skills", "matched": 2, "total": 31, "weight": 2, "pct": 29, "keywords_hit": ["data-driven", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 5, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "communication", "strategic", "self-starter"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://sg.linkedin.com/jobs/view/product-manager-consumer-market-at-asus-4424333233"
@@ -11,9 +11,6 @@ source: "LinkedIn"
 location: "Singapore, Singapore"
 work_type: "Remote"
 ---
-### LinkedIn Job
-- **Location**: Singapore, Singapore
-- Visit the link for full job details.
 
 ### Full Job Description
 Are you ready to ignite your career and be part of something truly extraordinary? At ASUS, we’re In Search of Incredible—and we want you on our team! We’re looking for dynamic, passionate individuals who are eager to innovate, create, and make waves in the tech world. If you’re fueled by ambition and thrive in a fast-paced environment where your ideas can shape the future, this is your opportunity to shine.

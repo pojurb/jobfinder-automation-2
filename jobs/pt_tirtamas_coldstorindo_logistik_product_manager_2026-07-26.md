@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "PT. Tirtamas Coldstorindo Logistik"
-match_score: 80
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["logistics", "saas", "ai", "platform"]}, {"category": "Hard Skills", "matched": 8, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "scrum", "prd", "product strategy", "sprint"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
+match_score: 66
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["logistics", "saas", "ai", "platform"]}, {"category": "Hard Skills", "matched": 8, "total": 31, "weight": 2, "pct": 100, "keywords_hit": ["agile", "scrum", "prd", "product strategy", "sprint"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 3, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.jobstreet.co.id/job/93192945"

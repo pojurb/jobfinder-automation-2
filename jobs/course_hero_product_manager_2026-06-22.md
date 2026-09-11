@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "Course Hero"
-match_score: 32
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["platform"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["machine learning"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+match_score: 37
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "lead product manager"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["platform"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["machine learning"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22670282"

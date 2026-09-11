@@ -1,8 +1,8 @@
 ---
 title: "Business Product Manager - Offline Issuing, ShopeePay"
 company: "Monee"
-match_score: 59
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["fintech", "ai"]}, {"category": "Hard Skills", "matched": 4, "total": 24, "weight": 2, "pct": 80, "keywords_hit": ["roadmap", "backlog", "requirements", "specifications"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["stakeholder"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
+match_score: 54
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["fintech", "ai"]}, {"category": "Hard Skills", "matched": 4, "total": 31, "weight": 2, "pct": 57, "keywords_hit": ["roadmap", "backlog", "requirements", "specifications"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["stakeholder"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/business-product-manager-offline-issuing-shopeepay-at-monee-4427543353"

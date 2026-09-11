@@ -1,8 +1,8 @@
 ---
 title: "Product Manager Solar Inverters"
 company: "TMEIC Corporation Americas"
-match_score: 57
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["roadmap"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "collaboration", "communication", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
+match_score: 55
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["roadmap"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "collaboration", "communication", "strategic"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 2, "total": 18, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://remoteok.com/remote-jobs/remote-product-manager-solar-inverters-tmeic-corporation-americas-1134410"

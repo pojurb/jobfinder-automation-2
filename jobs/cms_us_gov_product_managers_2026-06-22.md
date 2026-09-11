@@ -1,8 +1,8 @@
 ---
 title: "Product Managers"
 company: "CMS (US Gov)"
-match_score: 29
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}]'
+match_score: 28
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}]'
 description_quality: "full"
 status: Junk
 url: "https://news.ycombinator.com/item?id=22674508"

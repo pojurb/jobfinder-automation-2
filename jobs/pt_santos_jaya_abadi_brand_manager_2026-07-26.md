@@ -1,8 +1,8 @@
 ---
 title: "Brand Manager"
 company: "PT Santos Jaya Abadi"
-match_score: 13
-score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
+match_score: 12
+score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
 description_quality: "full"
 status: "Junk"
 url: "https://www.jobstreet.co.id/job/92974576"

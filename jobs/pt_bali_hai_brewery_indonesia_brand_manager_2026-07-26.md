@@ -1,8 +1,8 @@
 ---
 title: "Brand Manager"
 company: "PT Bali Hai Brewery Indonesia"
-match_score: 34
-score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "insurance"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["data-driven"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 5, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "strategic", "problem-solving"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+match_score: 26
+score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["ai", "insurance"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["data-driven"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 5, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "strategic", "problem-solving"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.jobstreet.co.id/job/93530656"

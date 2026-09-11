@@ -1,8 +1,8 @@
 ---
 title: "Product Manager, Ecosystem"
 company: "ARRISE"
-match_score: 84
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 7, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "kpi", "sprint", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "strategic"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "global", "worldwide"]}, {"category": "Business Impact", "matched": 3, "total": 16, "weight": 1.5, "pct": 75, "keywords_hit": ["growth", "arr", "scale"]}]'
+match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 7, "total": 31, "weight": 2, "pct": 100, "keywords_hit": ["roadmap", "kpi", "sprint", "backlog", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "strategic"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["remote", "global", "worldwide"]}, {"category": "Business Impact", "matched": 3, "total": 18, "weight": 1.5, "pct": 75, "keywords_hit": ["growth", "arr", "scale"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://mt.linkedin.com/jobs/view/product-manager-ecosystem-at-arrise-4383936157"

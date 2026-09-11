@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager"
 company: "Connecticut Innovations"
-match_score: 75
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "platform", "startup"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["roadmap", "product lifecycle", "product vision"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "rag"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+match_score: 67
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 5, "total": 22, "weight": 2, "pct": 100, "keywords_hit": ["fintech", "ai", "platform", "startup", "hris"]}, {"category": "Hard Skills", "matched": 3, "total": 31, "weight": 2, "pct": 43, "keywords_hit": ["roadmap", "product lifecycle", "product vision"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "remote", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/senior-product-manager-at-connecticut-innovations-4429564832"

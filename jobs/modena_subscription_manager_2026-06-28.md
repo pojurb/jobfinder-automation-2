@@ -1,8 +1,8 @@
 ---
 title: "Subscription Manager"
 company: "MODENA"
-match_score: 21
-score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["acquisition"]}]'
+match_score: 20
+score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 15, "weight": 1, "pct": 67, "keywords_hit": ["leadership", "communication"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["acquisition"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/subscription-manager-at-modena-4410954865"

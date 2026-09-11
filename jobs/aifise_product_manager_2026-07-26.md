@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "AIFISE"
-match_score: 61
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "fintech", "ai", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 24, "weight": 2, "pct": 60, "keywords_hit": ["agile", "product discovery", "specifications"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "automation"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+match_score: 55
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["saas", "fintech", "ai", "digital products"]}, {"category": "Hard Skills", "matched": 3, "total": 31, "weight": 2, "pct": 43, "keywords_hit": ["agile", "product discovery", "specifications"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 24, "weight": 2.5, "pct": 40, "keywords_hit": ["ai", "automation"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/product-manager-at-aifise-4443566321"

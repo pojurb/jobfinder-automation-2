@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "Duolingo"
-match_score: 26
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["cross-functional"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["roi"]}]'
+match_score: 29
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["university"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["cross-functional"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["roi"]}]'
 description_quality: "full"
 status: Junk
 url: "https://news.ycombinator.com/item?id=22668340"

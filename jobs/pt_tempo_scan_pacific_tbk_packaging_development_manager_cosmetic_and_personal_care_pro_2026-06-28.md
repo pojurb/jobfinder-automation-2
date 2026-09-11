@@ -1,8 +1,8 @@
 ---
 title: "Packaging Development Manager (Cosmetic and Personal Care Product)"
 company: "PT Tempo Scan Pacific Tbk"
-match_score: 14
-score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
+match_score: 13
+score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
 description_quality: "full"
 status: "Junk"
 url: "https://id.linkedin.com/jobs/view/packaging-development-manager-cosmetic-and-personal-care-product-at-pt-tempo-scan-pacific-tbk-4433215586"

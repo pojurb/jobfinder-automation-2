@@ -1,8 +1,8 @@
 ---
 title: "Product Manager Aesthetic (Mechine Device)"
 company: "Beauty World Indonesia"
-match_score: 44
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "global"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "roi"]}]'
+match_score: 43
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "global"]}, {"category": "Business Impact", "matched": 2, "total": 18, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "roi"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-manager-aesthetic-mechine-device-at-beauty-world-indonesia-4439143287"

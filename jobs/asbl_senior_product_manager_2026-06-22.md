@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager"
 company: "ASBL"
-match_score: 60
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "senior product manager"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["ai", "platform", "marketplace", "insurance"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "arr"]}]'
+match_score: 56
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "senior product manager"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["ai", "platform", "marketplace", "insurance"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["remote"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 2, "total": 18, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "arr"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://in.linkedin.com/jobs/view/senior-product-manager-at-asbl-4418228991"

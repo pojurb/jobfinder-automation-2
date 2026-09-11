@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager"
 company: "numi"
-match_score: 82
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead"]}, {"category": "Domain Match", "matched": 8, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "b2b", "fintech", "ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "llm", "automation"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "leadership", "autonomous"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 3, "total": 16, "weight": 1.5, "pct": 75, "keywords_hit": ["scale", "enterprise", "b2b saas"]}]'
+match_score: 79
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead"]}, {"category": "Domain Match", "matched": 8, "total": 22, "weight": 2, "pct": 100, "keywords_hit": ["saas", "b2b", "fintech", "ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 24, "weight": 2.5, "pct": 60, "keywords_hit": ["ai", "llm", "automation"]}, {"category": "Soft Skills", "matched": 3, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "leadership", "autonomous"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["remote", "global"]}, {"category": "Business Impact", "matched": 3, "total": 18, "weight": 1.5, "pct": 75, "keywords_hit": ["scale", "enterprise", "b2b saas"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://uk.linkedin.com/jobs/view/senior-product-manager-at-numi-4441033229"

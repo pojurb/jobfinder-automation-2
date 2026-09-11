@@ -1,8 +1,8 @@
 ---
 title: "SENIOR SPV PROJECT & PROPERTY"
 company: "PT Surya Timur Sakti Jatim [Distributor Motor Yamaha : Jatim,Kalimantan,NTB,NTT]"
-match_score: 19
-score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["logistics", "ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["stakeholder", "leadership"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
+match_score: 16
+score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["logistics", "ai"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 15, "weight": 1, "pct": 67, "keywords_hit": ["stakeholder", "leadership"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.jobstreet.co.id/job/93492133"

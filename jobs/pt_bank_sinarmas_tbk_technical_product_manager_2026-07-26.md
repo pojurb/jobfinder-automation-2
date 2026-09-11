@@ -1,8 +1,8 @@
 ---
 title: "Technical Product Manager"
 company: "PT Bank Sinarmas Tbk"
-match_score: 77
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["fintech", "ai", "platform"]}, {"category": "Hard Skills", "matched": 5, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "scrum", "product strategy", "product discovery", "requirements"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "rag", "automation"]}, {"category": "Soft Skills", "matched": 6, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "collaboration", "leadership", "mentoring"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
+match_score: 73
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product management", "individual contributor"]}, {"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["fintech", "ai", "platform"]}, {"category": "Hard Skills", "matched": 5, "total": 31, "weight": 2, "pct": 71, "keywords_hit": ["agile", "scrum", "product strategy", "product discovery", "requirements"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 24, "weight": 2.5, "pct": 40, "keywords_hit": ["ai", "automation"]}, {"category": "Soft Skills", "matched": 7, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "collaboration", "leadership", "mentoring"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/technical-product-manager-at-pt-bank-sinarmas-tbk-4442988928"

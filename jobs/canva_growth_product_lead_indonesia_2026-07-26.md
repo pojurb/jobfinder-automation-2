@@ -1,8 +1,8 @@
 ---
 title: "Growth & Product Lead, Indonesia"
 company: "Canva"
-match_score: 42
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product lead"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["saas", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["roadmap"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "strategic"]}, {"category": "Location Preference", "matched": 5, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "southeast asia", "global", "worldwide"]}, {"category": "Business Impact", "matched": 2, "total": 16, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
+match_score: 39
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product lead"]}, {"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["saas", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["roadmap"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "communication", "strategic"]}, {"category": "Location Preference", "matched": 5, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "southeast asia", "global", "worldwide"]}, {"category": "Business Impact", "matched": 2, "total": 18, "weight": 1.5, "pct": 50, "keywords_hit": ["growth", "scale"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/growth-product-lead-indonesia-at-canva-4444315613"

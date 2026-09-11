@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager"
 company: "PT. TYMY TEH INDONESIA"
-match_score: 76
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["b2b", "ai"]}, {"category": "Hard Skills", "matched": 6, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "scrum", "roadmap", "requirements", "product lifecycle"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 3, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "hybrid"]}]'
+match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product management"]}, {"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["b2b", "ai"]}, {"category": "Hard Skills", "matched": 6, "total": 31, "weight": 2, "pct": 86, "keywords_hit": ["agile", "scrum", "roadmap", "requirements", "product lifecycle"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 3, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "hybrid"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.jobstreet.co.id/job/93063922"

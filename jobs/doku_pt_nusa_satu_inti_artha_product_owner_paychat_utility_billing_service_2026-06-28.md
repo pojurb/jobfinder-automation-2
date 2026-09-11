@@ -1,8 +1,8 @@
 ---
 title: "Product Owner (PayChat Utility Billing Service)"
 company: "DOKU, PT NUSA SATU INTI ARTHA"
-match_score: 59
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product owner", "product management"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["requirements"]}, {"category": "Tools", "matched": 4, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "confluence", "figma", "notion"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
+match_score: 35
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product management"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["requirements"]}, {"category": "Tools", "matched": 4, "total": 14, "weight": 1.5, "pct": 100, "keywords_hit": ["jira", "confluence", "figma", "notion"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 4, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["stakeholder", "collaboration", "communication", "problem-solving"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-owner-paychat-utility-billing-service-at-doku-pt-nusa-satu-inti-artha-4423107005"

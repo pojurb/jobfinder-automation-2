@@ -1,8 +1,8 @@
 ---
 title: "Experienced Product Owners"
 company: "Healex"
-match_score: 41
-score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product owner"]}, {"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["infrastructure", "platform", "startup"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["requirements"]}]'
+match_score: 19
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["infrastructure", "platform", "startup", "hris"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["requirements"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22669054"

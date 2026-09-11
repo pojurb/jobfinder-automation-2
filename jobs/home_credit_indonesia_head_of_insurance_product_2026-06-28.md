@@ -1,8 +1,8 @@
 ---
 title: "Head of Insurance Product"
 company: "Home Credit Indonesia"
-match_score: 28
-score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "insurance"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["roadmap", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["stakeholder"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["revenue"]}]'
+match_score: 27
+score_breakdown: '[{"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["ai", "insurance", "university"]}, {"category": "Hard Skills", "matched": 2, "total": 31, "weight": 2, "pct": 29, "keywords_hit": ["roadmap", "requirements"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["stakeholder"]}, {"category": "Location Preference", "matched": 2, "total": 12, "weight": 1.5, "pct": 67, "keywords_hit": ["indonesia", "jakarta"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["revenue"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/head-of-insurance-product-at-home-credit-indonesia-4432520920"

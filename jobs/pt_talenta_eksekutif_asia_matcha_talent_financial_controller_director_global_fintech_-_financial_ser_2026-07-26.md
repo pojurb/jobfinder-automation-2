@@ -1,8 +1,8 @@
 ---
 title: "Financial Controller | Director (Global FinTech - Financial Services)"
 company: "PT Talenta Eksekutif Asia (Matcha Talent)"
-match_score: 44
-score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["fintech", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["requirements"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["analytics"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "rag", "automation"]}, {"category": "Soft Skills", "matched": 7, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "global"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
+match_score: 36
+score_breakdown: '[{"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["fintech", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["requirements"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["analytics"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 24, "weight": 2.5, "pct": 40, "keywords_hit": ["ai", "automation"]}, {"category": "Soft Skills", "matched": 7, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["cross-functional", "stakeholder", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 3, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "global"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["growth"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.jobstreet.co.id/job/93558023"

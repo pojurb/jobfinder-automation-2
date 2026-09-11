@@ -1,8 +1,8 @@
 ---
 title: "Senior Product Manager"
 company: "CTC"
-match_score: 77
-score_breakdown: '[{"category": "Role Match", "matched": 4, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product owner", "senior product manager", "product lead"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 6, "total": 24, "weight": 2, "pct": 100, "keywords_hit": ["agile", "roadmap", "sprint", "backlog", "requirements"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["jira"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 19, "weight": 2.5, "pct": 75, "keywords_hit": ["ai", "llm", "automation"]}, {"category": "Soft Skills", "matched": 6, "total": 12, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
+match_score: 72
+score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "senior product manager", "product lead"]}, {"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 6, "total": 31, "weight": 2, "pct": 86, "keywords_hit": ["agile", "roadmap", "sprint", "backlog", "requirements"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["jira"]}, {"category": "AI & Tech Skills", "matched": 3, "total": 24, "weight": 2.5, "pct": 60, "keywords_hit": ["ai", "llm", "automation"]}, {"category": "Soft Skills", "matched": 6, "total": 15, "weight": 1, "pct": 100, "keywords_hit": ["remote", "stakeholder", "collaboration", "leadership", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["remote"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://www.linkedin.com/jobs/view/senior-product-manager-at-ctc-4441076728"

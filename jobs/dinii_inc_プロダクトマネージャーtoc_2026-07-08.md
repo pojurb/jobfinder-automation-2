@@ -1,8 +1,8 @@
 ---
 title: "プロダクトマネージャー（ToC）"
 company: "Dinii, inc"
-match_score: 24
-score_breakdown: '[{"category": "Domain Match", "matched": 3, "total": 17, "weight": 2, "pct": 75, "keywords_hit": ["saas", "fintech", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 24, "weight": 2, "pct": 20, "keywords_hit": ["kpi"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["notion"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
+match_score: 20
+score_breakdown: '[{"category": "Domain Match", "matched": 3, "total": 22, "weight": 2, "pct": 60, "keywords_hit": ["saas", "fintech", "ai"]}, {"category": "Hard Skills", "matched": 1, "total": 31, "weight": 2, "pct": 14, "keywords_hit": ["kpi"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["notion"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["indonesia"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/%E3%83%97%E3%83%AD%E3%83%80%E3%82%AF%E3%83%88%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%E3%83%BC%EF%BC%88toc%EF%BC%89-at-dinii-inc-4435287278"

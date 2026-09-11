@@ -1,8 +1,8 @@
 ---
 title: "Product Owner (2-Wheeler Data & Market Research)"
 company: "TecAlliance"
-match_score: 55
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product owner"]}, {"category": "Domain Match", "matched": 1, "total": 17, "weight": 2, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["requirements", "product vision"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["sql"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["communication", "self-starter"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "apac", "asia pacific"]}, {"category": "Business Impact", "matched": 1, "total": 16, "weight": 1.5, "pct": 25, "keywords_hit": ["acquisition"]}]'
+match_score: 30
+score_breakdown: '[{"category": "Domain Match", "matched": 1, "total": 22, "weight": 2, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Hard Skills", "matched": 2, "total": 31, "weight": 2, "pct": 29, "keywords_hit": ["requirements", "product vision"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["sql"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 15, "weight": 1, "pct": 67, "keywords_hit": ["communication", "self-starter"]}, {"category": "Location Preference", "matched": 4, "total": 12, "weight": 1.5, "pct": 100, "keywords_hit": ["indonesia", "jakarta", "apac", "asia pacific"]}, {"category": "Business Impact", "matched": 1, "total": 18, "weight": 1.5, "pct": 25, "keywords_hit": ["acquisition"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/product-owner-2-wheeler-data-market-research-at-tecalliance-4428071727"

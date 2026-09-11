@@ -1,8 +1,8 @@
 ---
 title: "Product Manager"
 company: "Gaia Platform ("
-match_score: 39
-score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 17, "weight": 2, "pct": 50, "keywords_hit": ["ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 19, "weight": 2.5, "pct": 50, "keywords_hit": ["ai", "machine learning"]}, {"category": "Soft Skills", "matched": 1, "total": 12, "weight": 1, "pct": 33, "keywords_hit": ["autonomous"]}]'
+match_score: 36
+score_breakdown: '[{"category": "Role Match", "matched": 1, "total": 11, "weight": 3, "pct": 33, "keywords_hit": ["product manager"]}, {"category": "Domain Match", "matched": 2, "total": 22, "weight": 2, "pct": 40, "keywords_hit": ["ai", "platform"]}, {"category": "AI & Tech Skills", "matched": 2, "total": 24, "weight": 2.5, "pct": 40, "keywords_hit": ["ai", "machine learning"]}, {"category": "Soft Skills", "matched": 1, "total": 15, "weight": 1, "pct": 33, "keywords_hit": ["autonomous"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://news.ycombinator.com/item?id=22668169"

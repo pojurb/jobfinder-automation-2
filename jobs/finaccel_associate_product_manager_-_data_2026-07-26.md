@@ -1,8 +1,8 @@
 ---
 title: "Associate Product Manager - Data"
 company: "FinAccel"
-match_score: 69
-score_breakdown: '[{"category": "Role Match", "matched": 3, "total": 11, "weight": 3, "pct": 100, "keywords_hit": ["product manager", "product management", "associate product manager"]}, {"category": "Domain Match", "matched": 4, "total": 17, "weight": 2, "pct": 100, "keywords_hit": ["saas", "fintech", "ai", "startup"]}, {"category": "Hard Skills", "matched": 2, "total": 24, "weight": 2, "pct": 40, "keywords_hit": ["prd", "kpi"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["sql"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 19, "weight": 2.5, "pct": 25, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 12, "weight": 1, "pct": 67, "keywords_hit": ["stakeholder", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
+match_score: 57
+score_breakdown: '[{"category": "Role Match", "matched": 2, "total": 11, "weight": 3, "pct": 67, "keywords_hit": ["product manager", "product management"]}, {"category": "Domain Match", "matched": 4, "total": 22, "weight": 2, "pct": 80, "keywords_hit": ["saas", "fintech", "ai", "startup"]}, {"category": "Hard Skills", "matched": 2, "total": 31, "weight": 2, "pct": 29, "keywords_hit": ["prd", "kpi"]}, {"category": "Tools", "matched": 1, "total": 14, "weight": 1.5, "pct": 33, "keywords_hit": ["sql"]}, {"category": "AI & Tech Skills", "matched": 1, "total": 24, "weight": 2.5, "pct": 20, "keywords_hit": ["ai"]}, {"category": "Soft Skills", "matched": 2, "total": 15, "weight": 1, "pct": 67, "keywords_hit": ["stakeholder", "communication"]}, {"category": "Location Preference", "matched": 1, "total": 12, "weight": 1.5, "pct": 33, "keywords_hit": ["jakarta"]}]'
 description_quality: "full"
 status: "Ready to Apply"
 url: "https://id.linkedin.com/jobs/view/associate-product-manager-data-at-finaccel-4435400812"
